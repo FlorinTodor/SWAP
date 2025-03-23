@@ -1,0 +1,162 @@
+[+] Monitoreando Apache en web5 - Sun Mar 23 17:39:28 UTC 2025
+[+] Estado de Apache - Sun Mar 23 17:39:28 UTC 2025
+[*] Procesos Apache:
+root           1  7.4  0.0   2800  1804 ?        Ss   17:39   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          11  0.0  0.0   5076  2556 ?        R    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:46487        0.0.0.0:*               LISTEN     
+udp        0      0 127.0.0.11:42141        0.0.0.0:*                          
+[*] Estado de Apache (apache2ctl):
+/usr/sbin/apache2ctl: 116: www-browser: not found
+'www-browser -dump http://localhost:80/server-status' failed.
+Maybe you need to install a package providing www-browser or you
+need to adjust the APACHE_LYNX variable in /etc/apache2/envvars
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          11 50.0  0.0  56360 10384 ?        R    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+root          20  0.0  0.0   7888  4108 ?        R    17:39   0:00 ps aux --sort=-%mem
+root           7  0.0  0.0   4324  3432 ?        S    17:39   0:00 /bin/bash /usr/local/bin/apache_monitor.sh
+root           1  7.1  0.0   2800  1804 ?        Ss   17:39   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+----------------------------
+[+] Monitoreando Apache en web5 - Sun Mar 23 17:39:58 UTC 2025
+[+] Estado de Apache - Sun Mar 23 17:39:58 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1804 ?        Ss   17:39   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          11  0.1  0.1 203456 23612 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.0 203488  7620 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.11:46487        0.0.0.0:*               LISTEN     
+udp        0      0 127.0.0.11:42141        0.0.0.0:*                          
+[*] Estado de Apache (apache2ctl):
+/usr/sbin/apache2ctl: 116: www-browser: not found
+'www-browser -dump http://localhost:80/server-status' failed.
+Maybe you need to install a package providing www-browser or you
+need to adjust the APACHE_LYNX variable in /etc/apache2/envvars
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          11  0.1  0.1 203456 23612 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+----------------------------
+[+] Monitoreando Apache en web5 - Sun Mar 23 17:40:28 UTC 2025
+[+] Estado de Apache - Sun Mar 23 17:40:28 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1804 ?        Ss   17:39   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          11  0.0  0.1 203456 23612 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.0 203488  7620 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.11:46487        0.0.0.0:*               LISTEN     
+udp        0      0 127.0.0.11:42141        0.0.0.0:*                          
+[*] Estado de Apache (apache2ctl):
+/usr/sbin/apache2ctl: 116: www-browser: not found
+'www-browser -dump http://localhost:80/server-status' failed.
+Maybe you need to install a package providing www-browser or you
+need to adjust the APACHE_LYNX variable in /etc/apache2/envvars
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          11  0.0  0.1 203456 23612 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+----------------------------
+[+] Monitoreando Apache en web5 - Sun Mar 23 17:40:58 UTC 2025
+[+] Estado de Apache - Sun Mar 23 17:40:58 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1804 ?        Ss   17:39   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          11  0.0  0.1 203456 23612 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.0 203488  7620 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.11:46487        0.0.0.0:*               LISTEN     
+udp        0      0 127.0.0.11:42141        0.0.0.0:*                          
+[*] Estado de Apache (apache2ctl):
+/usr/sbin/apache2ctl: 116: www-browser: not found
+'www-browser -dump http://localhost:80/server-status' failed.
+Maybe you need to install a package providing www-browser or you
+need to adjust the APACHE_LYNX variable in /etc/apache2/envvars
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          11  0.0  0.1 203456 23612 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+----------------------------
+[+] Monitoreando Apache en web5 - Sun Mar 23 17:41:28 UTC 2025
+[+] Estado de Apache - Sun Mar 23 17:41:28 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1804 ?        Ss   17:39   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          11  0.0  0.1 203456 23612 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.0 203488  7620 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.11:46487        0.0.0.0:*               LISTEN     
+udp        0      0 127.0.0.11:42141        0.0.0.0:*                          
+[*] Estado de Apache (apache2ctl):
+/usr/sbin/apache2ctl: 116: www-browser: not found
+'www-browser -dump http://localhost:80/server-status' failed.
+Maybe you need to install a package providing www-browser or you
+need to adjust the APACHE_LYNX variable in /etc/apache2/envvars
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          11  0.0  0.1 203456 23612 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+----------------------------
+[+] Monitoreando Apache en web5 - Sun Mar 23 17:41:58 UTC 2025
+[+] Estado de Apache - Sun Mar 23 17:41:58 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1804 ?        Ss   17:39   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          11  0.0  0.1 203456 23612 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.0 203488  7620 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.11:46487        0.0.0.0:*               LISTEN     
+udp        0      0 127.0.0.11:42141        0.0.0.0:*                          
+[*] Estado de Apache (apache2ctl):
+/usr/sbin/apache2ctl: 116: www-browser: not found
+'www-browser -dump http://localhost:80/server-status' failed.
+Maybe you need to install a package providing www-browser or you
+need to adjust the APACHE_LYNX variable in /etc/apache2/envvars
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          11  0.0  0.1 203456 23612 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.0 203488  7660 ?        S    17:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+----------------------------

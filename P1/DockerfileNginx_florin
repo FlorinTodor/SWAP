@@ -1,0 +1,31 @@
+FROM ubuntu:latest
+
+# Actualizamos los paquetes del sistema
+RUN apt-get update && apt-get upgrade -y
+
+# Instalamos Nginx, PHP y PHP-FPMS
+RUN apt-get install nginx php php-fpm php-cli php-mysql php-mbstring php-xml php-curl php-gd php-zip php-bcmath -y
+
+# Instalamos herramientas de red básicas
+RUN apt install -y net-tools iputils-ping
+
+# Instalamos iptables
+RUN apt-get install iptables -y
+# Eliminamos la configuración predeterminada de Nginx
+RUN rm /etc/nginx/sites-enabled/default
+RUN rm /etc/nginx/nginx.conf
+
+# Copiamos nuestra nueva configuración personalizada
+COPY ./Nginx_config/default /etc/nginx/sites-available/default
+RUN ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+COPY ./Nginx_config/nginx.conf /etc/nginx/nginx.conf
+
+
+# Copiamos nuestro script de entrada
+COPY ./entrypoint_nginx.sh /entrypoint.sh
+
+# Expón el puerto 80
+EXPOSE 80
+
+# Ejecuta el script de entrada
+CMD ["/entrypoint.sh"]

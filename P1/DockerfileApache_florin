@@ -1,0 +1,43 @@
+FROM ubuntu:latest
+
+# Actualizamos los paquetes del sistema
+
+RUN  apt-get update && apt-get upgrade -y
+
+
+
+# Creamos el directorio de trabajo 
+RUN mkdir -p /var/log/apache2
+RUN chown -R www-data:www-data /var/log/apache2
+
+# Instalamos apache2 y php
+
+RUN apt-get install apache2 php libapache2-mod-php -y
+
+
+
+# Elimina el warning del ServerName
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+# Instalamos las herramientas de internet básicas (net-tools)
+
+RUN  apt install net-tools -y
+RUN  apt install iputils-ping -y
+
+# Cambiamos la configuración de apache para poner mayor seguridad
+COPY ./apache_config/.htaccess /var/www/html/.htaccess
+
+# Copiar el script de monitoreo
+COPY apache_monitor.sh /usr/local/bin/apache_monitor.sh
+RUN chmod +x /usr/local/bin/apache_monitor.sh
+
+### EJecución de servicios de la imagen
+
+COPY entrypoint_apache.sh /usr/local/bin/entrypoint_apache.sh
+RUN chmod +x /usr/local/bin/entrypoint_apache.sh
+
+ENTRYPOINT ["/usr/local/bin/entrypoint_apache.sh"]
+#CMD [ "apache2ctl", "-D", "FOREGROUND" ] # solo ejecutar apache 
+
+# Exponemos el puerto 80 (http)
+EXPOSE 80
+
