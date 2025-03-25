@@ -17,6 +17,7 @@ function ctrl_c(){
 
 trap ctrl_c INT
 
+# Función para mostrar el panel de ayuda
 function helpPanel(){
   echo -e "\n${yellowColour}[+]${endColour}${grayColour} Uso:${endColour}\n"
   echo -e "\t${purpleColour}-c${endColour}${grayColour} Limpiar archivos dentro de logs_apache y logs_nginx${endColour}"
@@ -140,6 +141,7 @@ function compose_up(){
   fi
 }
 
+# Función para actualizar paquetes en los contenedores web activos
 function update_in_containers(){
   echo -e "${yellowColour}[i] Buscando contenedores web activos...${endColour}"
   
@@ -166,19 +168,24 @@ function update_in_containers(){
   fi
 }
 
+# Función para limpiar archivos de logs en logs_apache y logs_nginx
 function clear_logs(){
-  echo -e "${yellowColour}[i] Limpiando archivos de logs...${endColour}"
-  
-  # Asegurar que existen los directorios antes de intentar limpiarlos
+
   for dir in logs_apache logs_nginx; do
     if [ -d "$dir" ]; then
-      rm -f $dir/* 2>/dev/null
-      echo -e "${greenColour}[✓] Archivos de logs en $dir eliminados.${endColour}"
+      if [ "$(ls -A $dir)" ]; then
+        echo -e "${yellowColour}[i] Limpiando archivos de logs...${endColour}"
+        rm -f "$dir"/* 2>/dev/null
+        echo -e "${greenColour}[✓] Archivos de logs en $dir eliminados.${endColour}"
+      else
+        echo -e "${redColour}[-] No hay archivos de logs en $dir para eliminar.${endColour}"
+      fi
     else
       echo -e "${redColour}[!] Directorio $dir no encontrado.${endColour}"
     fi
   done
 }
+
 
 
 # Opciones

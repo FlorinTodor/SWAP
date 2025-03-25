@@ -1,5 +1,5 @@
 
-# Datos comunes para todos los servicios
+# Datos comunes para todos los servicios de apache
 x-common-apache-config: &common-apache-config
   image: flotodor-apache-image:p1
   restart: always
@@ -9,7 +9,7 @@ x-common-apache-config: &common-apache-config
 
     
 
-
+# Datos comunes para todos los servicios de nginx
 x-common-nginx-config: &common-nginx-config
   image: flotodor-nginx-image:p1
   restart: always
