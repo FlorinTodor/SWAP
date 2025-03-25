@@ -12,10 +12,7 @@ while true; do
 
   echo "[*] Conexiones activas (netstat):" >> $LOGFILE
   netstat -tuln >> $LOGFILE
-
-  echo "[*] Estado de Apache (apache2ctl):" >> $LOGFILE
-  apache2ctl status >> $LOGFILE 2>> $LOGFILE
-
+  
   echo "[*] Top procesos por uso de memoria:" >> $LOGFILE
   ps aux --sort=-%mem | head -n 5 >> $LOGFILE
 
