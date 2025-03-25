@@ -102,3 +102,47 @@ www-data      20  0.0  0.0 203488  7596 ?        S    21:15   0:00 /usr/sbin/apa
 www-data      21  0.0  0.0 203488  7596 ?        S    21:15   0:00 /usr/sbin/apache2 -D FOREGROUND
 www-data      22  0.0  0.0 203488  7596 ?        S    21:15   0:00 /usr/sbin/apache2 -D FOREGROUND
 ----------------------------
+[+] Monitoreando Apache en web5 - Tue Mar 25 21:17:59 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1724 ?        Ss   21:15   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          10  0.0  0.1 203456 22908 ?        S    21:15   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      18  0.0  0.0 203488  7552 ?        S    21:15   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      19  0.0  0.0 203488  7592 ?        S    21:15   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      20  0.0  0.0 203488  7596 ?        S    21:15   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      21  0.0  0.0 203488  7596 ?        S    21:15   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      22  0.0  0.0 203488  7596 ?        S    21:15   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:34767        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+udp        0      0 127.0.0.11:52572        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          10  0.0  0.1 203456 22908 ?        S    21:15   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      20  0.0  0.0 203488  7596 ?        S    21:15   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      21  0.0  0.0 203488  7596 ?        S    21:15   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      22  0.0  0.0 203488  7596 ?        S    21:15   0:00 /usr/sbin/apache2 -D FOREGROUND
+----------------------------
+[+] Monitoreando Apache en web5 - Tue Mar 25 21:18:29 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1724 ?        Ss   21:15   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          10  0.0  0.1 203456 22908 ?        S    21:15   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      18  0.0  0.0 203488  7552 ?        S    21:15   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      19  0.0  0.0 203488  7592 ?        S    21:15   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      20  0.0  0.0 203488  7596 ?        S    21:15   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      21  0.0  0.0 203488  7596 ?        S    21:15   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      22  0.0  0.0 203488  7596 ?        S    21:15   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:34767        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+udp        0      0 127.0.0.11:52572        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          10  0.0  0.1 203456 22908 ?        S    21:15   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      20  0.0  0.0 203488  7596 ?        S    21:15   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      21  0.0  0.0 203488  7596 ?        S    21:15   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      22  0.0  0.0 203488  7596 ?        S    21:15   0:00 /usr/sbin/apache2 -D FOREGROUND
+----------------------------
