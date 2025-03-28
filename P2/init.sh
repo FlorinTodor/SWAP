@@ -36,16 +36,16 @@ function stop_and_remove() {
     # Elegir contenedores apache, nginx o ambos
   case $type in
     apache)
-      containers="web1 web3 web5 web7 web9 balanceador_nginx"
+      containers="web1 web3 web5 web7 web9 nginx_balanceador"
       ;;
     nginx)
-      containers="web2 web4 web6 web8 balanceador_nginx"
+      containers="web2 web4 web6 web8 nginx_balanceador"
       ;;
     nginx_balanceador)
-      containers="balanceador_nginx"
+      containers="nginx_balanceador"
     ;;
     all)
-      containers="web1 web2 web3 web4 web5 web6 web7 web8 web9 balanceador_nginx"
+      containers="web1 web2 web3 web4 web5 web6 web7 web8 web9 nginx_balanceador"
       ;;
     *)
       echo -e "${redColour}[!] Selecciona: apache, nginx, nginx_balanceador o all${endColour}"
@@ -65,7 +65,8 @@ function stop_and_remove() {
     case $type in
       apache) echo -e "${yellowColour}[!] No se encontraron contenedores Apache (web impar)${endColour}" ;;
       nginx)  echo -e "${yellowColour}[!] No se encontraron contenedores Nginx (web par)${endColour}" ;;
-      all)    echo -e "${yellowColour}[!] No se encontraron contenedores para eliminar (web1 a web9)${endColour}" ;;
+      nginx_balanceador) echo -e "${yellowColour}[!] No se encontraron contenedores Nginx Balanceador${endColour}" ;;
+      all)    echo -e "${yellowColour}[!] No se encontraron contenedores para eliminar (web1 a web9) ni Nginx_balanceador ${endColour}" ;;
     esac
   else
     # Si existen contenedores, detener y eliminar
@@ -150,13 +151,13 @@ function compose_up(){
   fi
 }
 
-# Función para actualizar paquetes en los contenedores web activos
+# Función para actualizar paquetes en los contenedores web activos y balanceadores
 function update_in_containers(){
-  echo -e "${yellowColour}[i] Buscando contenedores web activos...${endColour}"
+  echo -e "${yellowColour}[i] Buscando contenedores web y balanceadores activos...${endColour}"
   
   updated=false
 
-# Actualizar paquetes en los contenedores web1 a web9
+  # Buscar contenedores llamados web1 a web9
   for i in {1..9}; do
     if docker ps --format '{{.Names}}' | grep -q "^web$i$"; then
       echo -e "${blueColour}[+] Actualizando paquetes en web$i...${endColour}"
@@ -172,10 +173,25 @@ function update_in_containers(){
     fi
   done
 
+  # Buscar contenedores que contengan la palabra "balanceador"
+  for container in $(docker ps --format '{{.Names}}' | grep -i "balanceador"); do
+    echo -e "${blueColour}[+] Actualizando paquetes en $container...${endColour}"
+    docker exec "$container" bash -c "apt-get update && apt-get upgrade -y" &>/dev/null
+
+    if [ $? -eq 0 ]; then
+      echo -e "${greenColour}[✓] $container actualizado correctamente.${endColour}"
+    else
+      echo -e "${redColour}[✗] Error actualizando $container.${endColour}"
+    fi
+
+    updated=true
+  done
+
   if [ "$updated" = false ]; then
-    echo -e "${yellowColour}[!] No hay contenedores web activos para actualizar.${endColour}"
+    echo -e "${yellowColour}[!] No hay contenedores web ni balanceadores activos para actualizar.${endColour}"
   fi
 }
+
 
 # Función para limpiar archivos de logs en logs_apache y logs_nginx
 function clear_logs(){
