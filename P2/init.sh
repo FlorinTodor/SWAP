@@ -10,50 +10,45 @@ purpleColour="\e[0;35m\033[1m"
 turquoiseColour="\e[0;36m\033[1m"
 grayColour="\e[0;37m\033[1m"
 
-# Salir del programa con Ctrl+C y recuperar el cursor
+trap ctrl_c INT
+
 function ctrl_c(){
   echo -e "\n ${redColour}[!] Saliendo....${endColour}"
 }
 
-trap ctrl_c INT
-
-# Función para mostrar el panel de ayuda
 function helpPanel(){
   echo -e "\n${yellowColour}[+]${endColour}${grayColour} Uso:${endColour}\n"
   echo -e "\t${purpleColour}-c${endColour}${grayColour} Limpiar archivos dentro de logs_apache y logs_nginx${endColour}"
-  echo -e "\t${purpleColour}-s${endColour}${grayColour} Detener y eliminar contenedores (apache/nginx/all)${endColour}"
-  echo -e "\t${purpleColour}-b${endColour}${grayColour} Crear imagen docker (apache/nginx/all)${endColour}"
-  echo -e "\t${purpleColour}-u${endColour}${grayColour} Ejecutar docker compose up${endColour}"
+  echo -e "\t${purpleColour}-s${endColour}${grayColour} Detener y eliminar contenedores (apache/nginx/haproxy/all)${endColour}"
+  echo -e "\t${purpleColour}-b${endColour}${grayColour} Crear imagen docker (apache/nginx/haproxy/all)${endColour}"
+  echo -e "\t${purpleColour}-u${endColour}${grayColour} Ejecutar docker compose up (nginx/haproxy)${endColour}"
   echo -e "\t${purpleColour}-p${endColour}${grayColour} Actualizar paquetes dentro de los contenedores activos${endColour}"
   echo -e "\t${purpleColour}-h${endColour}${grayColour} Mostrar este panel de ayuda${endColour}\n"
 }
 
-# Función para detener y eliminar contenedores
 function stop_and_remove() {
   local type=$1
   local containers=""
 
-    # Elegir contenedores apache, nginx o ambos
   case $type in
     apache)
-      containers="web1 web3 web5 web7 web9 nginx_balanceador"
+      containers="web1 web3 web5 web7"
       ;;
     nginx)
       containers="web2 web4 web6 web8 nginx_balanceador"
       ;;
-    nginx_balanceador)
-      containers="nginx_balanceador"
-    ;;
+    haproxy)
+      containers="haproxy_balanceador"
+      ;;
     all)
-      containers="web1 web2 web3 web4 web5 web6 web7 web8 web9 nginx_balanceador"
+      containers="web1 web2 web3 web4 web5 web6 web7 web8 nginx_balanceador haproxy_balanceador"
       ;;
     *)
-      echo -e "${redColour}[!] Selecciona: apache, nginx, nginx_balanceador o all${endColour}"
+      echo -e "${redColour}[!] Selecciona: apache, nginx, haproxy o all${endColour}"
       return
       ;;
   esac
 
-  # Filtrar los contenedores que realmente existen
   local existing=()
   for name in $containers; do
     if docker ps -a --format '{{.Names}}' | grep -q "^$name$"; then
@@ -62,78 +57,70 @@ function stop_and_remove() {
   done
 
   if [ ${#existing[@]} -eq 0 ]; then
-    case $type in
-      apache) echo -e "${yellowColour}[!] No se encontraron contenedores Apache (web impar)${endColour}" ;;
-      nginx)  echo -e "${yellowColour}[!] No se encontraron contenedores Nginx (web par)${endColour}" ;;
-      nginx_balanceador) echo -e "${yellowColour}[!] No se encontraron contenedores Nginx Balanceador${endColour}" ;;
-      all)    echo -e "${yellowColour}[!] No se encontraron contenedores para eliminar (web1 a web9) ni Nginx_balanceador ${endColour}" ;;
-    esac
+    echo -e "${yellowColour}[!] No se encontraron contenedores activos para eliminar.${endColour}"
   else
-    # Si existen contenedores, detener y eliminar
-    docker stop "${existing[@]}" &>/dev/null 
+    docker stop "${existing[@]}" &>/dev/null
     docker rm -f "${existing[@]}" &>/dev/null
     for name in "${existing[@]}"; do
       echo -e "${greenColour}[+] Contenedor ${name} detenido y eliminado${endColour}"
     done
-
-    remove_networks # Eliminar redes
   fi
 }
 
-# Función para construir imágenes según los dockerfiles
 function build_image(){
   case $1 in
     apache)
       docker rmi flotodor-apache-image:p2 -f
       docker build -t flotodor-apache-image:p2 -f ./P2-flotodor-apache/DockerfileApache_florin .
-      echo -e "${greenColour}[+] Imagen de Apache construida como flotodor-apache-image:p1${endColour}"
-    ;;
-
+      ;;
     nginx)
       docker rmi flotodor-nginx_web-image:p2 -f
       docker build -t flotodor-nginx_web-image:p2 -f ./P2-flotodor-nginx/DockerfileNginx_web .
-      echo -e "${greenColour}[+] Imagen de Nginx_web construida como flotodor-nginx_web-image:p1${endColour}"
-    ;;
-
-    nginx_balanceador)
       docker rmi flotodor-nginx_balanceador-image:p2 -f
       docker build -t flotodor-nginx_balanceador-image:p2 -f ./P2-flotodor-nginx/DockerfileNginx_balanceador .
-      echo -e "${greenColour}[+] Imagen de Nginx_balanceador construida como flotodor-nginx_balanceador-image:p2${endColour}"
-    ;;
+      ;;
+    haproxy)
+      docker rmi flotodor-haproxy_balanceador-image:p2 -f
+      docker build -t flotodor-haproxy_balanceador-image:p2 -f ./P2-flotodor-haproxy/DockerfileHAproxy_balanceador .
+      ;;
     all)
-      docker rmi flotodor-apache-image:p2 flotodor-nginx_web-image:p2 flotodor-nginx_balanceador-image:p2 -f
-      docker build -t flotodor-apache-image:p2 -f ./P2-flotodor-apache/DockerfileApache_florin .
-      docker build -t flotodor-nginx_web-image:p2 -f ./P2-flotodor-nginx/DockerfileNginx_web .
-      docker build -t flotodor-nginx_balanceador-image:p2 -f ./P2-flotodor-nginx/DockerfileNginx_balanceador .
-      echo -e "${greenColour}[+] Imágenes de Apache, Nginx y nginx_balanceador construidas correctamente${endColour}"
-    ;;
-
+      build_image apache
+      build_image nginx
+      build_image haproxy
+      ;;
     *)
-      echo -e "${redColour}[!] Selecciona: apache, nginx o all${endColour}"
-    ;;
+      echo -e "${redColour}[!] Selecciona: apache, nginx, haproxy o all${endColour}"
+      ;;
   esac
 }
 
-# Función para eliminar redes
-function remove_networks(){
-  docker network rm p1_red_web p1_red_servicios 2>/dev/null
-  echo -e "${greenColour}[+] Redes Docker eliminadas.${endColour}"
+function ensure_networks() {
+  declare -A redes=(
+    ["red_web"]="192.168.10.0/24"
+    ["red_servicios"]="192.168.20.0/24"
+  )
+  for red in "${!redes[@]}"; do
+    if ! docker network ls --format '{{.Name}}' | grep -q "^${red}$"; then
+      docker network create --driver bridge --subnet "${redes[$red]}" "$red" &>/dev/null
+      echo -e "${greenColour}[✓] Red ${red} creada correctamente.${endColour}"
+    else
+      echo -e "${blueColour}[✓] Red ${red} ya existe.${endColour}"
+    fi
+  done
 }
 
-# Función para comprobar puertos y ejecutar docker compose up
+
 function compose_up(){
-  echo -e "${yellowColour}[i] Comprobando puertos 8081 a 8089...${endColour}"
+  local type=$1
+  ensure_networks
+
+  echo -e "${yellowColour}[i] Comprobando puertos 8080 a 8089...${endColour}"
   busy=false
-  # Comprobar si los puertos 8081 a 8089 están ocupados
-  for port in {8081..8089}; do
+  for port in {8080..8089}; do
     pid=$(lsof -ti :$port 2>/dev/null)
-    
     if [ -z "$pid" ]; then
-      # Si lsof no devuelve nada, intentar con ss
       pid=$(ss -ltnp 2>/dev/null | grep ":$port " | awk -F 'pid=' '{print $2}' | cut -d',' -f1)
     fi
-    # Si el puerto está ocupado, mostrar el proceso que lo está usando
-
     if [ ! -z "$pid" ]; then
       pname=$(ps -p $pid -o comm= 2>/dev/null)
       echo -e "${redColour}[!] El puerto $port está en uso por el proceso $pname (PID $pid).${endColour}"
@@ -141,65 +128,64 @@ function compose_up(){
     fi
   done
 
-# Si algún puerto está ocupado, abortar la ejecución de docker compose up
   if [ "$busy" = true ]; then
     echo -e "${redColour}[X] Algunos puertos están ocupados. Aborta ejecución de docker compose up.${endColour}"
-  else
-    # Si todos los puertos están libres, ejecutar docker compose up
-    docker compose up -d
-    echo -e "${greenColour}[+] Servicios iniciados con docker compose.${endColour}"
+    return
   fi
+
+  # Autodetener balanceador en conflicto
+  if [ "$type" == "nginx" ] && docker ps --format '{{.Names}}' | grep -q "^haproxy_balanceador$"; then
+    echo -e "${yellowColour}[!] Se detectó haproxy_balanceador corriendo. Deteniéndolo...${endColour}"
+    docker stop haproxy_balanceador &>/dev/null
+    docker rm haproxy_balanceador &>/dev/null
+    echo -e "${greenColour}[✓] haproxy_balanceador detenido.${endColour}"
+  elif [ "$type" == "haproxy" ] && docker ps --format '{{.Names}}' | grep -q "^nginx_balanceador$"; then
+    echo -e "${yellowColour}[!] Se detectó nginx_balanceador corriendo. Deteniéndolo...${endColour}"
+    docker stop nginx_balanceador &>/dev/null
+    docker rm nginx_balanceador &>/dev/null
+    echo -e "${greenColour}[✓] nginx_balanceador detenido.${endColour}"
+  fi
+
+  # Ejecutar docker compose up del balanceador seleccionado
+  case $type in
+    nginx)
+      docker compose -f docker-compose_nginx_balanceador.yaml up -d --remove-orphans
+      echo -e "${greenColour}[+] Servicios iniciados con Nginx.${endColour}"
+      ;;
+    haproxy)
+      docker compose -f docker-compose_haproxy_balanceador.yaml up -d --remove-orphans
+      echo -e "${greenColour}[+] Servicios iniciados con HAProxy.${endColour}"
+      ;;
+    *)
+      echo -e "${redColour}[!] Especifica el tipo de balanceador: nginx o haproxy${endColour}"
+      ;;
+  esac
 }
 
-# Función para actualizar paquetes en los contenedores web activos y balanceadores
 function update_in_containers(){
   echo -e "${yellowColour}[i] Buscando contenedores web y balanceadores activos...${endColour}"
-  
   updated=false
-
-  # Buscar contenedores llamados web1 a web9
   for i in {1..9}; do
     if docker ps --format '{{.Names}}' | grep -q "^web$i$"; then
-      echo -e "${blueColour}[+] Actualizando paquetes en web$i...${endColour}"
       docker exec web$i bash -c "apt-get update && apt-get upgrade -y" &>/dev/null
-
-      if [ $? -eq 0 ]; then
-        echo -e "${greenColour}[✓] web$i actualizado correctamente.${endColour}"
-      else
-        echo -e "${redColour}[✗] Error actualizando web$i.${endColour}"
-      fi
-
+      echo -e "${greenColour}[✓] web$i actualizado correctamente.${endColour}"
       updated=true
     fi
   done
-
-  # Buscar contenedores que contengan la palabra "balanceador"
   for container in $(docker ps --format '{{.Names}}' | grep -i "balanceador"); do
-    echo -e "${blueColour}[+] Actualizando paquetes en $container...${endColour}"
     docker exec "$container" bash -c "apt-get update && apt-get upgrade -y" &>/dev/null
-
-    if [ $? -eq 0 ]; then
-      echo -e "${greenColour}[✓] $container actualizado correctamente.${endColour}"
-    else
-      echo -e "${redColour}[✗] Error actualizando $container.${endColour}"
-    fi
-
+    echo -e "${greenColour}[✓] $container actualizado correctamente.${endColour}"
     updated=true
   done
-
   if [ "$updated" = false ]; then
     echo -e "${yellowColour}[!] No hay contenedores web ni balanceadores activos para actualizar.${endColour}"
   fi
 }
 
-
-# Función para limpiar archivos de logs en logs_apache y logs_nginx
 function clear_logs(){
-
   for dir in logs_apache logs_nginx; do
     if [ -d "$dir" ]; then
       if [ "$(ls -A $dir)" ]; then
-        echo -e "${yellowColour}[i] Limpiando archivos de logs...${endColour}"
         rm -f "$dir"/* 2>/dev/null
         echo -e "${greenColour}[✓] Archivos de logs en $dir eliminados.${endColour}"
       else
@@ -211,22 +197,19 @@ function clear_logs(){
   done
 }
 
-
-
-# Opciones
-while getopts "s:b:upch" arg; do
-  case $arg in  
+while getopts "s:b:u:pch" arg; do
+  case $arg in
     c) clear_logs;;
     s) stop_and_remove $OPTARG;;
     b) build_image $OPTARG;;
-    u) compose_up;;
+    u) compose_up $OPTARG;;
     p) update_in_containers;;
     h) helpPanel;;
     *) helpPanel;;
   esac
+
 done
 
-# Si no se pasa ningún parámetro, mostrar helpPanel
 if [ $# -eq 0 ]; then
   helpPanel
 fi

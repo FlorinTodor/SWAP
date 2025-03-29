@@ -30,5 +30,3 @@ EXPOSE 80
 
 # Reemplazamos por completo el ENTRYPOINT original de nginx
 CMD ["/entrypoint.sh"]
-
-
