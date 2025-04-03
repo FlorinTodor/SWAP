@@ -1,0 +1,14 @@
+FROM traefik:latest
+
+# Instalación de utilidades de red (opcional, útil para depuración)
+RUN apk add --no-cache iputils net-tools iproute2 curl
+
+# Directorios de configuración
+COPY ./P2-flotodor-traefik/traefik.yaml /etc/traefik/traefik.yaml
+COPY ./P2-flotodor-traefik/dynamic.yaml /etc/traefik/dynamic.yaml
+
+#http
+EXPOSE 80
+
+#dashboard
+EXPOSE 8080  

@@ -28,7 +28,7 @@ function helpPanel(){
   echo -e "\t\t   ${greenColour}pd${endColour}${grayColour} = ponderación con pesos${endColour}"
   echo -e "\t\t   ${greenColour}rb${endColour}${grayColour} = round-robin (por defecto)${endColour}"
   echo -e "\t\t${turquoiseColour}haproxy:${endColour}"
-  echo -e "\t\t   ${greenColour}tr${endColour}${grayColour} = menor tiempo de respuesta${endColour}"
+  echo -e "\t\t   ${greenColour}lc${endColour}${grayColour} = menor número de conexiones${endColour}"
   echo -e "\t\t   ${greenColour}rb${endColour}${grayColour} = round-robin (por defecto)${endColour}"
   echo -e "\t${purpleColour}-p${endColour}${grayColour} Actualizar paquetes dentro de los contenedores activos${endColour}"
   echo -e "\t${purpleColour}-h${endColour}${grayColour} Mostrar este panel de ayuda${endColour}\n"
@@ -55,11 +55,14 @@ function stop_and_remove() {
     nginx_balanceador)
       containers="nginx_balanceador"
       ;;
+    traefik_balanceador)
+      containers="traefik_balanceador"
+      ;;
     all)
-      containers="web1 web2 web3 web4 web5 web6 web7 web8 nginx_balanceador haproxy_balanceador"
+      containers="web1 web2 web3 web4 web5 web6 web7 web8 nginx_balanceador haproxy_balanceador traefik_balanceador"
       ;;
     *)
-      echo -e "${redColour}[!] Selecciona: apache, nginx, haproxy o all${endColour}"
+      echo -e "${redColour}[!] Selecciona: apache, nginx, nginx_balanceador,  haproxy_balanceador, traefik_balanceador o all${endColour}"
       return
       ;;
   esac
@@ -103,6 +106,10 @@ function build_image(){
       docker rmi flotodor-haproxy_balanceador-image:p2 -f
       docker build -t flotodor-haproxy_balanceador-image:p2 -f ./P2-flotodor-haproxy/DockerfileHAproxy_balanceador .
       ;;
+    traefik_balanceador)
+      docker rmi flotodor-traefik_balanceador-image:p2 -f
+      docker build -t flotodor-traefik_balanceador-image:p2 -f ./P2-flotodor-traefik/DockerfileTraefik_balanceador .
+      ;;
     all)
       build_image apache
       build_image nginx
@@ -135,20 +142,20 @@ function ensure_networks() {
 # Se copia el archivo de configuración correspondiente a la estrategia seleccionada
 # y se muestra un mensaje indicando la estrategia utilizada
 # Se espera que el archivo de configuración esté en la ruta ./P2-flotodor-haproxy/config_balanceador/
-#Las estrategias disponibles son: menor tiempo de respuesta (tr) y round-robin (rb) y por defecto se usa round-robin
+#Las estrategias disponibles son: menor número de conexiones (lc) y round-robin (rb) y por defecto se usa round-robin
 function set_haproxy_strategy() {
   local strategy=$1
   case "$strategy" in
-    tr)
-      cp ./P2-flotodor-haproxy/config_balanceador/haproxy_tr.cfg ./P2-flotodor-haproxy/config_balanceador/haproxy.cfg
-      echo -e "${blueColour}[i] Estrategia de balanceo: menor tiempo de respuesta${endColour}"
+    lc)
+      cp ./P2-flotodor-haproxy/config_balanceador/haproxy_lc.cfg ./P2-flotodor-haproxy/config_balanceador/haproxy.cfg
+      echo -e "${blueColour}[i] Estrategia de balanceo: menor número de conexiones${endColour}"
       ;;
     rb|"")
       cp ./P2-flotodor-haproxy/config_balanceador/haproxy_rb.cfg ./P2-flotodor-haproxy/config_balanceador/haproxy.cfg
       echo -e "${blueColour}[i] Estrategia de balanceo: round-robin (por defecto)${endColour}"
       ;;
     *)
-      echo -e "${redColour}[!] Estrategia desconocida: $strategy. Usa 'tr' o 'rb'.${endColour}"
+      echo -e "${redColour}[!] Estrategia desconocida: $strategy. Usa 'lc' o 'rb'.${endColour}"
       return 1
       ;;
   esac
@@ -228,8 +235,12 @@ function start_balanceador() {
       docker compose -f docker-compose_haproxy_balanceador.yaml up -d --remove-orphans
       echo -e "${greenColour}[+] Servicios iniciados con HAProxy.${endColour}"
       ;;
+    traefik)
+      docker compose -f docker-compose_traefik_balanceador.yaml up -d --remove-orphans
+      echo -e "${greenColour}[+] Servicios iniciados con Traefik.${endColour}"
+      ;;
     *)
-      echo -e "${redColour}[!] Especifica el tipo de balanceador: nginx o haproxy${endColour}"
+      echo -e "${redColour}[!] Especifica el tipo de balanceador: nginx, haproxy o traefik${endColour}"
       return 1
       ;;
   esac

@@ -1,0 +1,35 @@
+http:
+  routers:
+    flotodor-router:
+      rule: "PathPrefix(`/`)"
+      service: flotodor-service
+      entryPoints:
+        - web
+
+    traefik-dashboard:
+      rule: "PathPrefix(`/dashboard`) || PathPrefix(`/api`)"
+      service: api@internal
+      entryPoints:
+        - traefik
+      middlewares:
+        - auth
+
+  services:
+    flotodor-service:
+      loadBalancer:
+        servers:
+          - url: "http://192.168.10.2"
+          - url: "http://192.168.10.3"
+          - url: "http://192.168.10.4"
+          - url: "http://192.168.10.5"
+          - url: "http://192.168.10.6"
+          - url: "http://192.168.10.7"
+          - url: "http://192.168.10.8"
+          - url: "http://192.168.10.9"
+        passHostHeader: true
+
+  middlewares:
+    auth:
+      basicAuth:
+        users:
+          - "flotodor:$2y$05$Jc4UpQTzBJ1u9n.VDpIowu3tH0RyEa4TUS9qvdiu1MaF2z47ZhWaS"
