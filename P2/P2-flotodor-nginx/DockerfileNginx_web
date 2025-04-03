@@ -9,6 +9,9 @@ RUN apt-get install nginx php php-fpm php-cli php-mysql php-mbstring php-xml php
 # Instalamos herramientas de red básicas
 RUN apt install -y net-tools iputils-ping
 
+# Eliminar el index.html por defecto de Nginx
+RUN rm -f /usr/share/nginx/html/index.html
+
 # Instalamos iptables
 RUN apt-get install iptables -y
 # Eliminamos la configuración predeterminada de Nginx

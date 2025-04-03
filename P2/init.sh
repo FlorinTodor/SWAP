@@ -243,7 +243,7 @@ function force_restart_balanceador_si_nginx() {
   local type=$1
   local strategy=$2
 
-  if [ $strategy == ""]; then
+  if [ "$strategy" == "" ]; then
     strategy="rb"
   fi 
   if [ "$type" == "nginx" ] && docker ps --format '{{.Names}}' | grep -q "^nginx_balanceador$"; then
@@ -262,7 +262,7 @@ function force_restart_balanceador_si_haproxy() {
   local type=$1
   local strategy=$2
 
-  if [ $strategy == ""]; then
+  if [ "$strategy" == "" ]; then
     strategy="rb"
   fi 
   if [ "$type" == "haproxy" ] && docker ps --format '{{.Names}}' | grep -q "^haproxy_balanceador$"; then

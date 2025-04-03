@@ -10362,3 +10362,11 @@
 [CLIENT 192.168.10.1] - - [02/Apr/2025:23:35:13 +0000] "GET / HTTP/1.1" => 200 (7928 bytes) Referer: "-" Agent: "curl/8.5.0" RequestTime: 0.000 sec
 [CLIENT 192.168.10.1] - - [02/Apr/2025:23:35:13 +0000] "GET / HTTP/1.1" => 200 (7937 bytes) Referer: "-" Agent: "curl/8.5.0" RequestTime: 0.000 sec
 [CLIENT 192.168.10.1] - - [02/Apr/2025:23:35:13 +0000] "GET / HTTP/1.1" => 200 (7928 bytes) Referer: "-" Agent: "curl/8.5.0" RequestTime: 0.000 sec
+[CLIENT 192.168.10.1] - - [03/Apr/2025:00:37:10 +0000] "GET / HTTP/1.1" => 200 (394 bytes) Referer: "-" Agent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" RequestTime: 0.002 sec
+[CLIENT 192.168.10.1] - - [03/Apr/2025:00:37:10 +0000] "GET / HTTP/1.1" => 200 (2638 bytes) Referer: "-" Agent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" RequestTime: 0.001 sec
+[CLIENT 192.168.10.1] - - [03/Apr/2025:00:37:10 +0000] "GET / HTTP/1.1" => 200 (394 bytes) Referer: "-" Agent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" RequestTime: 0.001 sec
+[CLIENT 192.168.10.1] - - [03/Apr/2025:00:37:10 +0000] "GET / HTTP/1.1" => 200 (2638 bytes) Referer: "-" Agent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" RequestTime: 0.001 sec
+[CLIENT 192.168.10.1] - - [03/Apr/2025:00:37:10 +0000] "GET / HTTP/1.1" => 200 (394 bytes) Referer: "-" Agent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" RequestTime: 0.001 sec
+[CLIENT 192.168.10.1] - - [03/Apr/2025:00:37:11 +0000] "GET / HTTP/1.1" => 200 (2638 bytes) Referer: "-" Agent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" RequestTime: 0.001 sec
+[CLIENT 192.168.10.1] - - [03/Apr/2025:00:37:12 +0000] "GET / HTTP/1.1" => 200 (394 bytes) Referer: "-" Agent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" RequestTime: 0.001 sec
+[CLIENT 192.168.10.1] - - [03/Apr/2025:00:37:13 +0000] "GET / HTTP/1.1" => 200 (2638 bytes) Referer: "-" Agent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" RequestTime: 0.001 sec

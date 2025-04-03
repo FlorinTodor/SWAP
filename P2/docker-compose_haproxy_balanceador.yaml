@@ -14,7 +14,7 @@ x-common-nginx_web-config: &common-nginx_web-config
   image: flotodor-nginx_web-image:p2
   restart: always
   volumes:
-    - ./web_flotodor:/usr/share/nginx/html
+    - ./web_flotodor:/usr/share/nginx/html:ro
     - ./logs_nginx:/var/log/nginx
 
 x-common-haproxy_balanceador-config: &common-haproxy_balanceador-config

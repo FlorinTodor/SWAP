@@ -34,6 +34,7 @@ RUN chmod +x /usr/local/bin/apache_monitor.sh
 
 COPY ./P2-flotodor-apache/entrypoint_apache.sh /usr/local/bin/entrypoint_apache.sh
 RUN chmod +x /usr/local/bin/entrypoint_apache.sh
+RUN echo 'DirectoryIndex index.php index.html' >> /etc/apache2/apache2.conf
 
 ENTRYPOINT ["/usr/local/bin/entrypoint_apache.sh"]
 #CMD [ "apache2ctl", "-D", "FOREGROUND" ] # solo ejecutar apache 
