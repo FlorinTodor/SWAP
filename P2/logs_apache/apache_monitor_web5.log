@@ -3539,3 +3539,51 @@ www-data      18  0.0  0.0 203544 13728 ?        S    Apr02   0:00 /usr/sbin/apa
 www-data      20  0.0  0.0 203708 13608 ?        S    Apr02   0:00 /usr/sbin/apache2 -D FOREGROUND
 www-data      19  0.0  0.0 203544 13096 ?        S    Apr02   0:00 /usr/sbin/apache2 -D FOREGROUND
 ----------------------------
+[+] Monitoreando Apache en web5 - Thu Apr  3 00:31:22 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1724 ?        Ss   Apr02   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          10  0.0  0.1 203456 23384 ?        S    Apr02   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      18  0.0  0.0 203544 13728 ?        S    Apr02   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      19  0.0  0.0 203544 13096 ?        S    Apr02   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      20  0.0  0.0 203708 13608 ?        S    Apr02   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      21  0.0  0.0 203544 13096 ?        S    Apr02   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      22  0.0  0.0 203544 13036 ?        S    Apr02   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 203544 13096 ?        S    Apr02   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     640  0.0  0.0 203544 13096 ?        S    00:13   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.11:33975        0.0.0.0:*               LISTEN     
+udp        0      0 127.0.0.11:39560        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          10  0.0  0.1 203456 23384 ?        S    Apr02   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      18  0.0  0.0 203544 13728 ?        S    Apr02   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      20  0.0  0.0 203708 13608 ?        S    Apr02   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      19  0.0  0.0 203544 13096 ?        S    Apr02   0:00 /usr/sbin/apache2 -D FOREGROUND
+----------------------------
+[+] Monitoreando Apache en web5 - Thu Apr  3 00:31:52 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1724 ?        Ss   Apr02   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          10  0.0  0.1 203456 23384 ?        S    Apr02   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      18  0.0  0.0 203544 13728 ?        S    Apr02   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      19  0.0  0.0 203544 13096 ?        S    Apr02   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      20  0.0  0.0 203708 13608 ?        S    Apr02   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      21  0.0  0.0 203708 13388 ?        S    Apr02   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      22  0.0  0.0 203544 13036 ?        S    Apr02   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 203544 13096 ?        S    Apr02   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     640  0.0  0.0 203544 13096 ?        S    00:13   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.11:33975        0.0.0.0:*               LISTEN     
+udp        0      0 127.0.0.11:39560        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          10  0.0  0.1 203456 23384 ?        S    Apr02   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      18  0.0  0.0 203544 13728 ?        S    Apr02   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      20  0.0  0.0 203708 13608 ?        S    Apr02   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      21  0.0  0.0 203708 13388 ?        S    Apr02   0:00 /usr/sbin/apache2 -D FOREGROUND
+----------------------------
