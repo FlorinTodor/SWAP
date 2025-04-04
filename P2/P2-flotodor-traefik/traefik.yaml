@@ -6,14 +6,12 @@ entryPoints:
 
 api:
   dashboard: true
-  insecure: true
-  enable: true
-  debug: true
-
-log:
-  level: DEBUG
+  insecure: false
 
 providers:
   file:
-    filename: /etc/traefik/dynamic.yaml
+    directory: /etc/traefik/dynamic
     watch: true
+
+log:
+  level: DEBUG

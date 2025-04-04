@@ -58,11 +58,14 @@ function stop_and_remove() {
     traefik_balanceador)
       containers="traefik_balanceador"
       ;;
+    envoy_balanceador)
+      containers="envoy_balanceador"
+      ;;
     all)
-      containers="web1 web2 web3 web4 web5 web6 web7 web8 nginx_balanceador haproxy_balanceador traefik_balanceador"
+      containers="web1 web2 web3 web4 web5 web6 web7 web8 nginx_balanceador haproxy_balanceador traefik_balanceador envoy_balanceador"
       ;;
     *)
-      echo -e "${redColour}[!] Selecciona: apache, nginx, nginx_balanceador,  haproxy_balanceador, traefik_balanceador o all${endColour}"
+      echo -e "${redColour}[!] Selecciona: apache, nginx, nginx_balanceador,  haproxy_balanceador, traefik_balanceador, envoy_balanceador o all ${endColour}"
       return
       ;;
   esac
@@ -108,15 +111,22 @@ function build_image(){
       ;;
     traefik_balanceador)
       docker rmi flotodor-traefik_balanceador-image:p2 -f
-      docker build -t flotodor-traefik_balanceador-image:p2 -f ./P2-flotodor-traefik/DockerfileTraefik_balanceador .
+      docker build --no-cache -t flotodor-traefik_balanceador-image:p2 -f ./P2-flotodor-traefik/DockerfileTraefik_balanceador .
+      ;;
+    envoy_balanceador)
+      docker rmi flotodor-envoy_balanceador-image:p2 -f
+      docker build --no-cache -t flotodor-envoy_balanceador-image:p2 -f ./P2-flotodor-envoy/DockerfileEnvoy_balanceador .
       ;;
     all)
       build_image apache
       build_image nginx
       build_image haproxy_balanceador
+      build_image nginx_balanceador
+      build_image traefik_balanceador
+      build_image envoy_balanceador
       ;;
     *)
-      echo -e "${redColour}[!] Selecciona: apache, nginx, haproxy o all${endColour}"
+      echo -e "${redColour}[!] Selecciona: apache, nginx,nginx_balanceador, haproxy_balanceador, traefik_balanceador, envoy_balanceador o all${endColour}"
       ;;
   esac
 }
@@ -207,19 +217,22 @@ function check_ports_availability() {
 # Función para detener balanceadores en conflicto
 # Se verifica si hay un balanceador de tipo Nginx o HAProxy en ejecución y se detiene en el caso de que el usuario quiera cambiar de balanceador con este script
 function stop_conflicting_balanceador() {
-  local type=$1
-  if [ "$type" == "nginx" ] && docker ps --format '{{.Names}}' | grep -q "^haproxy_balanceador$"; then
-    echo -e "${yellowColour}[!] Se detectó haproxy_balanceador corriendo. Deteniéndolo...${endColour}"
-    docker stop haproxy_balanceador &>/dev/null
-    docker rm haproxy_balanceador &>/dev/null
-    echo -e "${greenColour}[✓] haproxy_balanceador detenido.${endColour}"
-  elif [ "$type" == "haproxy" ] && docker ps --format '{{.Names}}' | grep -q "^nginx_balanceador$"; then
-    echo -e "${yellowColour}[!] Se detectó nginx_balanceador corriendo. Deteniéndolo...${endColour}"
-    docker stop nginx_balanceador &>/dev/null
-    docker rm nginx_balanceador &>/dev/null
-    echo -e "${greenColour}[✓] nginx_balanceador detenido.${endColour}"
-  fi
+  local selected=$1
+  local balanceadores=("nginx_balanceador" "haproxy_balanceador" "traefik_balanceador" "envoy_balanceador")
+
+  for bal in "${balanceadores[@]}"; do
+    # Extraemos el nombre base para comparar con el tipo seleccionado
+    local tipo="${bal%%_balanceador}"
+    
+    if [ "$tipo" != "$selected" ] && docker ps --format '{{.Names}}' | grep -q "^${bal}$"; then
+      echo -e "${yellowColour}[!] Se detectó ${bal} corriendo. Deteniéndolo...${endColour}"
+      docker stop "$bal" &>/dev/null
+      docker rm "$bal" &>/dev/null
+      echo -e "${greenColour}[✓] ${bal} detenido.${endColour}"
+    fi
+  done
 }
+
 
 # Función para iniciar el balanceador de carga
 # Se utiliza docker compose para levantar el balanceador de carga especificado, esto se utiliza para cuando el usuario quiere cambiar de tipo de balanceador en mitad de 
@@ -239,8 +252,12 @@ function start_balanceador() {
       docker compose -f docker-compose_traefik_balanceador.yaml up -d --remove-orphans
       echo -e "${greenColour}[+] Servicios iniciados con Traefik.${endColour}"
       ;;
+    envoy)
+      docker compose -f docker-compose_envoy_balanceador.yaml up -d --remove-orphans
+      echo -e "${greenColour}[+] Servicios iniciados con envoy.${endColour}"
+      ;;
     *)
-      echo -e "${redColour}[!] Especifica el tipo de balanceador: nginx, haproxy o traefik${endColour}"
+      echo -e "${redColour}[!] Especifica el tipo de balanceador: nginx, haproxy, traefik o envoy ${endColour}"
       return 1
       ;;
   esac
@@ -306,16 +323,20 @@ function compose_up() {
     set_haproxy_strategy "$strategy" || return
   fi
 
+  # Primero detener balanceadores en conflicto
+  stop_conflicting_balanceador "$type"
+  force_restart_balanceador_si_nginx "$type" "$strategy"
+  force_restart_balanceador_si_haproxy "$type" "$strategy"
+
+  # Luego comprobar puertos
   check_ports_availability || {
     echo -e "${redColour}[X] Algunos puertos están ocupados. Aborta ejecución de docker compose up.${endColour}"
     return
   }
 
-  stop_conflicting_balanceador "$type"
-  force_restart_balanceador_si_nginx "$type" "$strategy"
-  force_restart_balanceador_si_haproxy "$type" "$strategy"
   start_balanceador "$type"
 }
+
 
 # Función para actualizar los contenedores web y balanceadores activos
 function update_in_containers(){

@@ -1,14 +1,11 @@
 FROM traefik:latest
 
-# Instalación de utilidades de red (opcional, útil para depuración)
+# Herramientas útiles para pruebas dentro del contenedor (opcional)
 RUN apk add --no-cache iputils net-tools iproute2 curl
 
-# Directorios de configuración
-COPY ./P2-flotodor-traefik/traefik.yaml /etc/traefik/traefik.yaml
-COPY ./P2-flotodor-traefik/dynamic.yaml /etc/traefik/dynamic.yaml
-
-#http
+# Exponer puertos necesarios
 EXPOSE 80
+EXPOSE 8080
 
-#dashboard
-EXPOSE 8080  
+# Ejecutar Traefik (el archivo será montado)
+CMD ["traefik", "--configFile=/etc/traefik/traefik.yaml"]
