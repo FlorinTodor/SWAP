@@ -63,11 +63,14 @@ function stop_and_remove() {
     envoy_balanceador)
       containers="envoy_balanceador"
       ;;
+    escalado)
+      containers="grafana prometheus node-exporter"
+      ;;
     all)
-      containers="web1 web2 web3 web4 web5 web6 web7 web8 nginx_balanceador haproxy_balanceador traefik_balanceador envoy_balanceador"
+      containers="web1 web2 web3 web4 web5 web6 web7 web8 nginx_balanceador haproxy_balanceador traefik_balanceador envoy_balanceador grafana prometheus node-exporter"
       ;;
     *)
-      echo -e "${redColour}[!] Selecciona: apache, nginx, nginx_balanceador,  haproxy_balanceador, traefik_balanceador, envoy_balanceador o all ${endColour}"
+      echo -e "${redColour}[!] Selecciona: apache, nginx, nginx_balanceador,  haproxy_balanceador, traefik_balanceador, envoy_balanceador, grafana prometheus node-exporter o all ${endColour}"
       return
       ;;
   esac
