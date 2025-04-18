@@ -22,7 +22,7 @@ function helpPanel(){
   echo -e "\t${purpleColour}-c${endColour}${grayColour} Limpiar archivos dentro de logs_apache y logs_nginx${endColour}"
   echo -e "\t${purpleColour}-s${endColour}${grayColour} Detener y eliminar contenedores (apache/nginx/nginx_balanceador/haproxy_balanceador/all)${endColour}"
   echo -e "\t${purpleColour}-b${endColour}${grayColour} Crear imagen docker (apache/nginx/nginx_balanceador/haproxy_balanceador/all)${endColour}"
-  echo -e "\t${purpleColour}-u${endColour}${grayColour} Ejecutar docker compose up para el balanceador (nginx/haproxy)${endColour}"
+  echo -e "\t${purpleColour}-u${endColour}${grayColour} Ejecutar docker compose up para el balanceador (nginx/haproxy/traefik/envoy/escalado)${endColour}"
   echo -e "\t\t${grayColour}Puedes indicar una estrategia de balanceo para los siguientes balanceadores:${endColour}"
   echo -e "\t\t${turquoiseColour}nginx:${endColour}"
   echo -e "\t\t   ${greenColour}pd${endColour}${grayColour} = ponderación con pesos${endColour}"
@@ -30,6 +30,8 @@ function helpPanel(){
   echo -e "\t\t${turquoiseColour}haproxy:${endColour}"
   echo -e "\t\t   ${greenColour}lc${endColour}${grayColour} = menor número de conexiones${endColour}"
   echo -e "\t\t   ${greenColour}rb${endColour}${grayColour} = round-robin (por defecto)${endColour}"
+  echo -e "\t\t${turquoiseColour}traefik/envoy:${endColour} ${greenColour}sin parámetro ${endColour}${grayColour} = round-robin (por defecto)${endColour}"
+  echo -e "\t\t${turquoiseColour}escalado:${endColour} ${greenColour}sin parámetro ${endColour}${grayColour} = round-robin (por defecto)${endColour}"
   echo -e "\t${purpleColour}-p${endColour}${grayColour} Actualizar paquetes dentro de los contenedores activos${endColour}"
   echo -e "\t${purpleColour}-h${endColour}${grayColour} Mostrar este panel de ayuda${endColour}\n"
 }
@@ -256,8 +258,20 @@ function start_balanceador() {
       docker compose -f docker-compose_envoy_balanceador.yaml up -d --remove-orphans
       echo -e "${greenColour}[+] Servicios iniciados con envoy.${endColour}"
       ;;
+    escalado)
+      if [ ! -d "grafana_data" ]; then
+        mkdir grafana_data && sudo chown 472:472 grafana_data
+        echo -e "${greenColour}[+] Directorio grafana_data creado y permisos asignados.${endColour}"
+      fi
+      if [ ! -d "prometheus_data" ]; then
+        mkdir prometheus_data && sudo chown 65534:65534 prometheus_data
+        echo -e "${greenColour}[+] Directorio prometheus_data creado y permisos asignados.${endColour}"
+      fi
+      docker compose -f docker-compose_escalado_automatico.yaml up -d --remove-orphans
+      echo -e "${greenColour}[+] Servicios iniciados con monitorización y escalado automático.${endColour}"
+      ;;
     *)
-      echo -e "${redColour}[!] Especifica el tipo de balanceador: nginx, haproxy, traefik o envoy ${endColour}"
+      echo -e "${redColour}[!] Especifica el tipo de balanceador: nginx, haproxy, traefik, envoy o escalado ${endColour}"
       return 1
       ;;
   esac
@@ -362,7 +376,7 @@ function update_in_containers(){
 # Función para limpiar los logs de los contenedores
 # Se eliminan los archivos de logs en los directorios logs_apache y logs_nginx
 function clear_logs(){
-  for dir in logs_apache logs_nginx; do
+  for dir in logs_apache logs_nginx logs_envoy logs_haproxy logs_traefik; do
     if [ -d "$dir" ]; then
       if [ "$(ls -A $dir)" ]; then
         rm -f "$dir"/* 2>/dev/null

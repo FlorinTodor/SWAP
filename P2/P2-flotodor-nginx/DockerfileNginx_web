@@ -30,6 +30,15 @@ RUN chmod +x /entrypoint.sh
 
 # Expón el puerto
 EXPOSE 80
+EXPOSE 9100
+
+# Node exporter
+# Al final del Dockerfile
+RUN apt update && apt install -y wget \
+ && wget https://github.com/prometheus/node_exporter/releases/download/v1.8.1/node_exporter-1.8.1.linux-amd64.tar.gz \
+ && tar xzf node_exporter-*.tar.gz \
+ && mv node_exporter-*/node_exporter /usr/local/bin/ \
+ && rm -rf node_exporter*
 
 # Reemplazamos por completo el ENTRYPOINT original de nginx
 CMD ["/entrypoint.sh"]

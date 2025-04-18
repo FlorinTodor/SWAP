@@ -12,7 +12,7 @@ RUN chown -R www-data:www-data /var/log/apache2
 
 # Instalamos apache2 y php
 
-RUN apt-get install apache2 php libapache2-mod-php -y
+RUN apt-get install apache2 php libapache2-mod-php -y apache2 wget supervisor
 
 
 
@@ -36,9 +36,20 @@ COPY ./P2-flotodor-apache/entrypoint_apache.sh /usr/local/bin/entrypoint_apache.
 RUN chmod +x /usr/local/bin/entrypoint_apache.sh
 RUN echo 'DirectoryIndex index.php index.html' >> /etc/apache2/apache2.conf
 
+#prometheus
+# Al final del Dockerfile
+RUN apt update && apt install -y wget \
+ && wget https://github.com/prometheus/node_exporter/releases/download/v1.8.1/node_exporter-1.8.1.linux-amd64.tar.gz \
+ && tar xzf node_exporter-*.tar.gz \
+ && mv node_exporter-*/node_exporter /usr/local/bin/ \
+ && rm -rf node_exporter*
+
+
 ENTRYPOINT ["/usr/local/bin/entrypoint_apache.sh"]
 #CMD [ "apache2ctl", "-D", "FOREGROUND" ] # solo ejecutar apache 
 
+
 # Exponemos el puerto 80 (http)
 EXPOSE 80
+EXPOSE 9100
 
