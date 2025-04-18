@@ -40,5 +40,5 @@ RUN apt update && apt install -y wget \
  && mv node_exporter-*/node_exporter /usr/local/bin/ \
  && rm -rf node_exporter*
 
-# Reemplazamos por completo el ENTRYPOINT original de nginx
+ # Reemplazamos por completo el ENTRYPOINT original de nginx
 CMD ["/entrypoint.sh"]

@@ -1,0 +1,126 @@
+[2025-04-18 23:32:58] [+] web9 creado
+[2025-04-18 23:32:59] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:33:16] [+] web10 creado
+[2025-04-18 23:33:18] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:33:34] [+] web11 creado
+[2025-04-18 23:33:36] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:33:52] [+] web12 creado
+[2025-04-18 23:33:54] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:34:10] [+] web13 creado
+[2025-04-18 23:34:12] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:34:28] [+] web14 creado
+[2025-04-18 23:34:31] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:34:47] [+] web15 creado
+[2025-04-18 23:34:50] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:35:06] [+] web16 creado
+[2025-04-18 23:35:07] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:35:22] [+] web17 creado
+[2025-04-18 23:35:23] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:35:49] [↓] web17 eliminado (dinámica)
+[2025-04-18 23:36:02] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:36:18] [+] web17 creado
+[2025-04-18 23:36:21] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:36:37] [+] web18 creado
+[2025-04-18 23:36:40] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:36:56] [+] web19 creado
+[2025-04-18 23:37:00] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:37:16] [+] web20 creado
+[2025-04-18 23:37:19] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:38:44] [↓] web20 eliminado (dinámica)
+[2025-04-18 23:38:46] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:39:11] [↓] web19 eliminado (dinámica)
+[2025-04-18 23:39:14] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:39:39] [↓] web18 eliminado (dinámica)
+[2025-04-18 23:39:42] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:40:08] [↓] web17 eliminado (dinámica)
+[2025-04-18 23:40:09] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:40:34] [↓] web16 eliminado (dinámica)
+[2025-04-18 23:40:37] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:41:02] [↓] web15 eliminado (dinámica)
+[2025-04-18 23:41:03] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:41:28] [↓] web14 eliminado (dinámica)
+[2025-04-18 23:41:29] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:41:55] [↓] web13 eliminado (dinámica)
+[2025-04-18 23:41:55] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:42:21] [↓] web12 eliminado (dinámica)
+[2025-04-18 23:42:22] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:42:47] [↓] web11 eliminado (dinámica)
+[2025-04-18 23:42:48] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:43:13] [↓] web10 eliminado (dinámica)
+[2025-04-18 23:43:14] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:43:39] [↓] web9 eliminado (dinámica)
+[2025-04-18 23:43:40] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:44:55] [!] Señal de parada detectada. Deteniendo escalador...
+[2025-04-18 23:52:53] [+] web9 creado
+[2025-04-18 23:52:54] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:53:19] [↓] web9 eliminado (dinámica)
+[2025-04-18 23:53:20] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:54:35] [!] Señal de parada detectada. Deteniendo escalador...
+[2025-04-18 23:54:49] [+] web9 creado
+[2025-04-18 23:54:50] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:55:15] [↓] web9 eliminado (dinámica)
+[2025-04-18 23:55:16] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:57:03] [+] web9 creado
+[2025-04-18 23:57:04] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:57:21] [+] web10 creado
+[2025-04-18 23:57:23] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:57:40] [+] web11 creado
+[2025-04-18 23:57:42] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:57:58] [+] web12 creado
+[2025-04-18 23:58:00] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:58:16] [+] web13 creado
+[2025-04-18 23:58:19] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:58:35] [+] web14 creado
+[2025-04-18 23:58:37] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:58:53] [+] web15 creado
+[2025-04-18 23:58:55] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:59:12] [+] web16 creado
+[2025-04-18 23:59:15] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:59:32] [+] web17 creado
+[2025-04-18 23:59:34] [↻] haproxy_balanceador reiniciado
+[2025-04-18 23:59:50] [+] web18 creado
+[2025-04-18 23:59:51] [↻] haproxy_balanceador reiniciado
+[2025-04-19 00:00:06] [+] web19 creado
+[2025-04-19 00:00:07] [↻] haproxy_balanceador reiniciado
+[2025-04-19 00:00:34] [↓] web19 eliminado (dinámica)
+[2025-04-19 00:00:47] [↻] haproxy_balanceador reiniciado
+[2025-04-19 00:01:03] [+] web19 creado
+[2025-04-19 00:01:06] [↻] haproxy_balanceador reiniciado
+[2025-04-19 00:01:22] [+] web20 creado
+[2025-04-19 00:01:26] [↻] haproxy_balanceador reiniciado
+[2025-04-19 00:02:36] [↓] web20 eliminado (dinámica)
+[2025-04-19 00:02:37] [↻] haproxy_balanceador reiniciado
+[2025-04-19 00:03:03] [↓] web19 eliminado (dinámica)
+[2025-04-19 00:03:03] [↻] haproxy_balanceador reiniciado
+[2025-04-19 00:03:29] [↓] web18 eliminado (dinámica)
+[2025-04-19 00:03:30] [↻] haproxy_balanceador reiniciado
+[2025-04-19 00:03:55] [↓] web17 eliminado (dinámica)
+[2025-04-19 00:03:56] [↻] haproxy_balanceador reiniciado
+[2025-04-19 00:04:21] [↓] web16 eliminado (dinámica)
+[2025-04-19 00:04:22] [↻] haproxy_balanceador reiniciado
+[2025-04-19 00:04:47] [↓] web15 eliminado (dinámica)
+[2025-04-19 00:04:48] [↻] haproxy_balanceador reiniciado
+[2025-04-19 00:05:13] [↓] web14 eliminado (dinámica)
+[2025-04-19 00:05:14] [↻] haproxy_balanceador reiniciado
+[2025-04-19 00:05:40] [↓] web13 eliminado (dinámica)
+[2025-04-19 00:05:40] [↻] haproxy_balanceador reiniciado
+[2025-04-19 00:06:06] [↓] web12 eliminado (dinámica)
+[2025-04-19 00:06:06] [↻] haproxy_balanceador reiniciado
+[2025-04-19 00:06:32] [↓] web11 eliminado (dinámica)
+[2025-04-19 00:06:32] [↻] haproxy_balanceador reiniciado
+[2025-04-19 00:06:58] [↓] web10 eliminado (dinámica)
+[2025-04-19 00:06:58] [↻] haproxy_balanceador reiniciado
+[2025-04-19 00:07:24] [↓] web9 eliminado (dinámica)
+[2025-04-19 00:07:25] [↻] haproxy_balanceador reiniciado
+[2025-04-19 00:33:57] [!] Señal de parada detectada. Deteniendo escalador...
+[2025-04-19 00:38:20] [+] web9 creado
+[2025-04-19 00:38:21] [↻] haproxy_balanceador reiniciado
+[2025-04-19 00:38:51] [!] Señal de parada detectada. Deteniendo escalador...
+[2025-04-19 00:44:50] [!] Señal de parada detectada. Deteniendo escalador...
+[2025-04-19 00:47:10] [+] web9 creado
+[2025-04-19 00:47:11] [↻] haproxy_balanceador reiniciado
+[2025-04-19 00:47:44] [↓] web9 eliminado (dinámica)
+[2025-04-19 00:47:44] [↻] haproxy_balanceador reiniciado
+[2025-04-19 00:56:39] [+] web9 creado
+[2025-04-19 00:56:39] [↻] haproxy_balanceador reiniciado
+[2025-04-19 00:57:09] [!] Señal de parada detectada. Deteniendo escalador...

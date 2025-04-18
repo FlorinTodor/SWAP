@@ -11,6 +11,7 @@ fi
 # Iniciamos PHP-FPM en segundo plano
 php-fpm8.3 --nodaemonize &
 
+
 # Iniciamos el node exporter en segundo plano
 /usr/local/bin/node_exporter &
 

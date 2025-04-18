@@ -46,10 +46,10 @@ function stop_and_remove() {
 
   case $type in
     apache)
-      containers="web1 web3 web5 web7"
+      containers=$(docker ps -a --format '{{.Names}}' | grep '^web[0-9]*$' | xargs -n1 docker inspect --format '{{.Name}} {{.Config.Image}}' 2>/dev/null | grep 'apache' | cut -d' ' -f1 | sed 's/^\/\(.*\)/\1/')
       ;;
     nginx)
-      containers="web2 web4 web6 web8"
+      containers=$(docker ps -a --format '{{.Names}}' | grep '^web[0-9]*$' | xargs -n1 docker inspect --format '{{.Name}} {{.Config.Image}}' 2>/dev/null | grep 'nginx' | cut -d' ' -f1 | sed 's/^\/\(.*\)/\1/')
       ;;
     haproxy_balanceador)
       containers="haproxy_balanceador"
@@ -67,10 +67,10 @@ function stop_and_remove() {
       containers="grafana prometheus node-exporter"
       ;;
     all)
-      containers="web1 web2 web3 web4 web5 web6 web7 web8 nginx_balanceador haproxy_balanceador traefik_balanceador envoy_balanceador grafana prometheus node-exporter"
+      containers=$(docker ps -a --format '{{.Names}}' | grep -E '^(web[0-9]+|grafana|prometheus|node-exporter|.*_balanceador)$')
       ;;
     *)
-      echo -e "${redColour}[!] Selecciona: apache, nginx, nginx_balanceador,  haproxy_balanceador, traefik_balanceador, envoy_balanceador, grafana prometheus node-exporter o all ${endColour}"
+      echo -e "${redColour}[!] Selecciona: apache, nginx, nginx_balanceador, haproxy_balanceador, traefik_balanceador, envoy_balanceador, escalado o all${endColour}"
       return
       ;;
   esac
@@ -91,7 +91,14 @@ function stop_and_remove() {
       echo -e "${greenColour}[+] Contenedor ${name} detenido y eliminado${endColour}"
     done
   fi
+
+  # Crear el archivo de parada si se eliminan servicios relacionados
+  if [[ "$type" == "escalado" || "$type" == "all" ]]; then
+    touch stop_escalador.flag
+    echo -e "${blueColour}[i] Escalador detenido (flag creada)${endColour}"
+  fi
 }
+
 
 # Función para construir imágenes Docker
 # Se eliminan las imágenes existentes y se construyen nuevas imágenes según el tipo especificado
@@ -336,9 +343,10 @@ function compose_up() {
     set_nginx_strategy "$strategy" || return
   fi
 
-  if [ "$type" == "haproxy" ]; then
-    set_haproxy_strategy "$strategy" || return
-  fi
+  if [[ "$type" == "haproxy" || "$type" == "escalado" ]]; then
+  set_haproxy_strategy "$strategy" || return
+fi
+
 
   # Primero detener balanceadores en conflicto
   stop_conflicting_balanceador "$type"
@@ -379,7 +387,7 @@ function update_in_containers(){
 # Función para limpiar los logs de los contenedores
 # Se eliminan los archivos de logs en los directorios logs_apache y logs_nginx
 function clear_logs(){
-  for dir in logs_apache logs_nginx logs_envoy logs_haproxy logs_traefik; do
+  for dir in logs_apache logs_nginx logs_envoy logs_haproxy logs_traefik logs_escalado; do
     if [ -d "$dir" ]; then
       if [ "$(ls -A $dir)" ]; then
         rm -f "$dir"/* 2>/dev/null
@@ -403,11 +411,23 @@ while getopts "s:b:u:pch" arg; do
       BAL_TYPE=$OPTARG
       STRATEGY=${!OPTIND} && shift
       compose_up "$BAL_TYPE" "$STRATEGY"
+
+      if [ "$BAL_TYPE" == "escalado" ]; then
+        rm -f stop_escalador.flag
+        if command -v gnome-terminal &>/dev/null; then
+        gnome-terminal -- bash -c "./escalador.sh; echo '[i] Escalador detenido. Cerrando terminal...'; sleep 1"
+        echo -e "${greenColour}[✓] Escalador iniciado en nueva terminal (gnome-terminal)${endColour}"
+        else
+         bash escalador.sh &
+         echo -e "${yellowColour}[!] No se encontró terminal gráfico. Ejecutando en segundo plano.${endColour}"
+        fi
+      fi
       ;;
     p) update_in_containers;;
     h) helpPanel;;
     *) helpPanel;;
   esac
+
 
 done
 

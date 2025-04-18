@@ -12,7 +12,7 @@ RUN chown -R www-data:www-data /var/log/apache2
 
 # Instalamos apache2 y php
 
-RUN apt-get install apache2 php libapache2-mod-php -y apache2 wget supervisor
+RUN apt-get install apache2 php libapache2-mod-php -y
 
 
 

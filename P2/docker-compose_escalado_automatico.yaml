@@ -132,6 +132,8 @@ services:
   haproxy_balanceador:
     <<: *common-haproxy_balanceador-config
     container_name: haproxy_balanceador
+    volumes:
+      - ./P2-flotodor-haproxy/config_balanceador/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
     environment:
       - SERVER_NAME=haproxy_balanceador
     networks:
@@ -157,11 +159,13 @@ services:
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
       - ./prometheus_data:/prometheus
-    networks:
-      red_servicios:
-        ipv4_address: 192.168.20.100
+      - ./file_sd:/etc/prometheus/file_sd     # <- esta línea es clave
     ports:
       - "9090:9090"
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.100
+
 
   node-exporter:
     image: prom/node-exporter:latest
@@ -172,8 +176,8 @@ services:
     volumes:
       - '/:/host:ro,rslave'
     networks:
-      red_servicios:
-        ipv4_address: 192.168.20.101
+      red_web:
+        ipv4_address: 192.168.10.101
     ports:
       - "9100:9100"
 
@@ -184,8 +188,8 @@ services:
     volumes:
       - ./grafana_data:/var/lib/grafana
     networks:
-      red_servicios:
-        ipv4_address: 192.168.20.102
+      red_web:
+        ipv4_address: 192.168.10.102
     ports:
       - "3000:3000"
     depends_on:
