@@ -269,14 +269,6 @@ function start_balanceador() {
       echo -e "${greenColour}[+] Servicios iniciados con envoy.${endColour}"
       ;;
     escalado)
-      if [ ! -d "grafana_data" ]; then
-        mkdir grafana_data && sudo chown 472:472 grafana_data
-        echo -e "${greenColour}[+] Directorio grafana_data creado y permisos asignados.${endColour}"
-      fi
-      if [ ! -d "prometheus_data" ]; then
-        mkdir prometheus_data && sudo chown 65534:65534 prometheus_data
-        echo -e "${greenColour}[+] Directorio prometheus_data creado y permisos asignados.${endColour}"
-      fi
       docker compose -f docker-compose_escalado_automatico.yaml up -d --remove-orphans
       echo -e "${greenColour}[+] Servicios iniciados con monitorización y escalado automático.${endColour}"
       ;;
