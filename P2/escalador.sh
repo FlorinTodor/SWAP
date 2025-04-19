@@ -11,20 +11,23 @@ turquoiseColour="\e[0;36m\033[1m"
 grayColour="\e[0;37m\033[1m"
 
 # Configuraciones
-THRESHOLD_UP=50
-THRESHOLD_DOWN=40
-MAX_CONTAINERS=20
-MIN_CONTAINERS=8
+#Limitaciones de escalado
+THRESHOLD_UP=50 # CPU alta para escalar, 50%
+THRESHOLD_DOWN=20 # CPU baja para desescalar, 20%
+MAX_CONTAINERS=20 # Máximo de contenedores
+MIN_CONTAINERS=8 # Mínimo de contenedores, las 8 webs iniciales
 
-PROMETHEUS_URL="http://localhost:9090"
-FILE_SD_CONFIG="./file_sd/web_servers.json"
-STOP_FILE="./stop_escalador.flag"
+PROMETHEUS_URL="http://localhost:9090" # URL de Prometheus 
+FILE_SD_CONFIG="./file_sd/web_servers.json" # Archivo de configuración de file_sd para Prometheus
+STOP_FILE="./stop_escalador.flag" # Archivo de parada para el escalador 
 
+# Método para crear el archivo de log de las acciones del escalador
 log() {
   mkdir -p ./logs_escalado
   echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> ./logs_escalado/escalador.log
 }
 
+# Método para actualizar la configuración de HAProxy con las instancias activas 
 actualizar_haproxy_cfg() {
   local cfg="./P2-flotodor-haproxy/config_balanceador/haproxy.cfg"
   cat > "$cfg" <<EOF
@@ -65,6 +68,10 @@ EOF
   echo -e "[i] Configuración de HAProxy actualizada con instancias activas"
 }
 
+# Método para actualizar el archivo de configuración de file_sd
+# con las instancias activas
+# Este archivo es utilizado por Prometheus para descubrir las instancias
+# de Node Exporter que están corriendo en los contenedores web.
 update_file_sd_config() {
   echo "[" > "$FILE_SD_CONFIG"
   echo "  {" >> "$FILE_SD_CONFIG"
@@ -81,14 +88,24 @@ update_file_sd_config() {
   echo -e "[i] Archivo file_sd actualizado con targets activos"
 }
 
+# Método para obtener los nombres de los contenedores web activos
+# y ordenarlos por su índice numérico
 get_active_webs() {
   docker ps --format '{{.Names}}' | grep -E "^web[0-9]+$" | sort -V
 }
 
+# Método para obtener el siguiente índice disponible para crear una nueva web
+# Se basa en los nombres de los contenedores activos
 get_next_index() {
   get_active_webs | sed 's/web//' | sort -n | tail -n1 | awk '{print $1 + 1}'
 }
 
+# Método para crear una nueva web
+# Se basa en el índice pasado como argumento
+# Se asigna un tipo de web (nginx o apache) basado en el índice
+# Se asigna una IP y un puerto basado en el índice
+# Se asignan volúmenes para los logs y el contenido web
+# Se conecta la web a las redes red_web y red_servicios
 crear_web() {
   local id=$1
   local tipo=$( [ $((id % 2)) -eq 0 ] && echo "nginx" || echo "apache" )
@@ -123,6 +140,8 @@ crear_web() {
   log "[+] web$id creado"
 }
 
+# Método para eliminar la última web dinámica
+# Se basa en el nombre del contenedor y se ordena por su índice numérico
 eliminar_ultimo_web() {
   last_web=$(get_active_webs | grep -E '^web([9-9]|[1-9][0-9]+)$' | sort -V | tail -n 1)
   if [ ! -z "$last_web" ]; then
@@ -135,6 +154,9 @@ eliminar_ultimo_web() {
   fi
 }
 
+# Método para obtener el uso de CPU de los contenedores
+# Se basa en la consulta a Prometheus para obtener el uso de CPU
+# Se utiliza la métrica node_cpu_seconds_total para calcular el uso de CPU
 get_cpu_usage() {
   local response
   response=$(curl -sG "$PROMETHEUS_URL/api/v1/query" \
@@ -149,7 +171,7 @@ get_cpu_usage() {
 }
 
 
-
+# Método para recargar el balanceador de carga 
 recargar_balanceador() {
   if docker ps --format '{{.Names}}' | grep -q "haproxy_balanceador"; then
     docker restart haproxy_balanceador
@@ -158,11 +180,13 @@ recargar_balanceador() {
   fi
 }
 
+# BUCLE PRINCIPAL 
 # ===========================
 # LÓGICA DE BUCLE CON FLAG
 # ===========================
 rm -f "$STOP_FILE"
-echo -e "{colorGreen}[i] Escalador iniciado. Esperando señal de parada...{resetColor}"
+echo -e "${greenColour}[i] Escalador iniciado. Esperando señal de parada...${endColour}"
+
 
 # ================================
 # Esperar hasta obtener un valor de CPU válido, esto se debe a que
@@ -180,38 +204,73 @@ while true; do
 
   # Obtener datos de CPU
   cpu_data=$(get_cpu_usage)
-  if [ $? -ne 0 ] || [ -z "$cpu_data" ]; then
+  # Comprobar si la consulta fue exitosa y si hay datos
+  # Si no hay datos, esperar 15 segundos y volver a intentar
+  if [ $? -ne 0 ] || [ -z "$cpu_data" ]; then 
     sleep 15
     continue
   fi
 
+# Obtener el valor de CPU promedio 
   avg_cpu=$(echo "$cpu_data" | awk '{print $2}' | head -n1)
+  # Comprobar si el valor de CPU es un número entero
   avg_cpu_int=${avg_cpu%.*}
+  # Si no es un número entero, esperar 15 segundos y volver a intentar
+  # Esto puede ocurrir si la consulta a Prometheus no devuelve un valor válido
   if ! [[ "$avg_cpu_int" =~ ^[0-9]+$ ]]; then
     sleep 15
     continue
   fi
 
+# Obtener el número total de webs activas
   total_webs=$(get_active_webs | wc -l)
-  echo "[i] CPU Promedio: $avg_cpu_int%"
+  echo  -e "${blueColour}[i] CPU Promedio: $avg_cpu_int% ${endColour}"
 
+# 
+  # Este bloque de código verifica si el promedio de uso de CPU (avg_cpu_int) es mayor o igual al umbral definido (THRESHOLD_UP)
+  # y si el número total de contenedores web (total_webs) es menor que el máximo permitido (MAX_CONTAINERS).
+  # Si ambas condiciones se cumplen:
+  # 1. Obtiene el siguiente índice disponible para un nuevo contenedor web mediante la función get_next_index.
+  # 2. Crea un nuevo contenedor web utilizando la función crear_web con el índice obtenido.
+  # 3. Actualiza la configuración del balanceador de carga HAProxy llamando a actualizar_haproxy_cfg.
+  # 4. Actualiza el archivo de configuración de service discovery llamando a update_file_sd_config.
+  # 5. Recarga el balanceador de carga para aplicar los cambios llamando a recargar_balanceador.
   if [ "$avg_cpu_int" -ge "$THRESHOLD_UP" ] && [ "$total_webs" -lt "$MAX_CONTAINERS" ]; then
     index=$(get_next_index)
     crear_web "$index"
     actualizar_haproxy_cfg
     update_file_sd_config
     recargar_balanceador
+ 
+   # 1. Si el uso promedio de CPU es menor que el umbral inferior (THRESHOLD_DOWN) y el número
+  #    total de webs es mayor que el mínimo permitido (MIN_CONTAINERS):
+  #    - Se elimina el último contenedor web.
+  #    - Se actualiza la configuración de HAProxy.
+  #    - Se actualiza el archivo de configuración de service discovery.
+  #    - Se recarga el balanceador de carga.
   elif [ "$avg_cpu_int" -lt "$THRESHOLD_DOWN" ] && [ "$total_webs" -gt "$MIN_CONTAINERS" ]; then
     eliminar_ultimo_web
     actualizar_haproxy_cfg
     update_file_sd_config
     recargar_balanceador
+  # 2. Si el uso promedio de CPU es mayor o igual al umbral superior (THRESHOLD_UP) y el número
+  #    total de webs ya ha alcanzado el máximo permitido (MAX_CONTAINERS):
+  #    - Se muestra un mensaje indicando que la CPU está alta, pero no se puede escalar más
+  #      porque ya se alcanzó el límite máximo de contenedores.
   elif [ "$avg_cpu_int" -ge "$THRESHOLD_UP" ] && [ "$total_webs" -ge "$MAX_CONTAINERS" ]; then
-    echo "[i] CPU alta, pero ya hay $MAX_CONTAINERS webs. No se escala más."
+    echo -e "${redColour}[i] CPU alta, pero ya hay $MAX_CONTAINERS webs. No se escala más. ${endColour}"
+  # 3. Si el uso promedio de CPU es menor que el umbral inferior (THRESHOLD_DOWN) y el número
+  #    total de webs ya está en el mínimo permitido (MIN_CONTAINERS):
+  #    - Se muestra un mensaje indicando que la CPU está baja, pero no se puede desescalar más
+  #      porque ya se alcanzó el límite mínimo de contenedores.
   elif [ "$avg_cpu_int" -lt "$THRESHOLD_DOWN" ] && [ "$total_webs" -le "$MIN_CONTAINERS" ]; then
-    echo "[i] CPU baja, pero ya están las $MIN_CONTAINERS webs mínimas. No se desescala más."
+    echo -e "${yellowColour}[i] CPU baja, pero ya están las $MIN_CONTAINERS webs mínimas. No se desescala más. ${endColour}"
+   # 4. En cualquier otro caso (cuando la CPU está estable y no se cumplen las condiciones
+  #    anteriores):
+  #    - Se muestra un mensaje indicando que la CPU está estable y no se realizará ninguna
+  #      acción de escalado o desescalado.
   else
-    echo "[i] CPU estable. No se escala ni desescala."
+    echo -e "${turquoiseColour}[i] CPU estable. No se escala ni desescala. ${endColour}"
   fi
 
   sleep 15
