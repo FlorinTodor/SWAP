@@ -19,13 +19,13 @@ RUN rm /etc/nginx/sites-enabled/default
 RUN rm /etc/nginx/nginx.conf
 
 # Copiamos nuestra nueva configuración personalizada
-COPY ./P2-flotodor-nginx/config_webs/default /etc/nginx/sites-available/default
+COPY ./P3-flotodor-nginx/config_webs/default /etc/nginx/sites-available/default
 RUN ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-COPY ./P2-flotodor-nginx/config_webs/nginx.conf /etc/nginx/nginx.conf
+COPY ./P3-flotodor-nginx/config_webs/nginx.conf /etc/nginx/nginx.conf
 
 
 # Copiamos el entrypoint
-COPY ./P2-flotodor-nginx/entrypoint_nginx.sh /entrypoint.sh
+COPY ./P3-flotodor-nginx/entrypoint_nginx.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 # Expón el puerto
