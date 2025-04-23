@@ -1,0 +1,210 @@
+
+# Datos comunes para todos los servicios de apache
+x-common-apache-config: &common-apache-config
+  image: flotodor-apache-image:p3
+  restart: always
+  volumes:
+    - ./web_flotodor:/var/www/html
+    - ./logs_apache:/var/log/apache2
+
+    
+
+# Datos comunes para todos los servicios de nginx
+x-common-nginx_web-config: &common-nginx_web-config
+  image: flotodor-nginx_web-image:p3
+  restart: always
+  volumes:
+    - ./web_flotodor:/usr/share/nginx/html:ro
+    - ./logs_nginx:/var/log/nginx
+
+x-common-haproxy_balanceador-config: &common-haproxy_balanceador-config
+  image: flotodor-haproxy_balanceador-image:p3
+  restart: always
+  volumes:
+    - ./logs_haproxy:/var/log/haproxy
+
+### TENGO QUE BUSCAR ALGUNA FORMA PARA QUE NO SE REPITA TANTO CODIGO ###
+services:
+  web1:
+    <<: *common-apache-config
+    container_name: web1
+    environment:
+      - SERVER_NAME=web1S
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.2
+      red_servicios:
+        ipv4_address: 192.168.20.2
+    ports:
+      - "8081:80"
+
+  web2:
+    <<: *common-nginx_web-config
+    container_name: web2
+    environment:
+      - SERVER_NAME=web2
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.3
+      red_servicios:
+        ipv4_address: 192.168.20.3
+    ports:
+      - "8082:80"
+
+  web3:
+    <<: *common-apache-config
+    container_name: web3
+    environment:
+      - SERVER_NAME=web3
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.4
+      red_servicios:
+        ipv4_address: 192.168.20.4
+    ports:
+      - "8083:80"
+
+  web4:
+    <<: *common-nginx_web-config
+    container_name: web4
+    environment:
+      - SERVER_NAME=web4
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.5
+      red_servicios:
+        ipv4_address: 192.168.20.5
+    ports:
+      - "8084:80"
+
+  web5:
+    <<: *common-apache-config
+    container_name: web5
+    environment:
+      - SERVER_NAME=web5
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.6
+      red_servicios:
+        ipv4_address: 192.168.20.6
+    ports:
+      - "8085:80"
+
+  web6:
+    <<: *common-nginx_web-config
+    container_name: web6
+    environment:
+      - SERVER_NAME=web6
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.7
+      red_servicios:
+        ipv4_address: 192.168.20.7
+    ports:
+      - "8086:80"
+
+  web7:
+    <<: *common-apache-config
+    container_name: web7
+    environment:
+      - SERVER_NAME=web7
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.8
+      red_servicios:
+        ipv4_address: 192.168.20.8
+    ports:
+      - "8087:80"
+
+  web8:
+    <<: *common-nginx_web-config
+    container_name: web8
+    environment:
+      - SERVER_NAME=web8
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.9
+      red_servicios:
+        ipv4_address: 192.168.20.9
+    ports:
+      - "8088:80"
+
+  haproxy_balanceador:
+    <<: *common-haproxy_balanceador-config
+    container_name: haproxy_balanceador
+    volumes:
+      - ./P3-flotodor-haproxy/config_balanceador/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+    environment:
+      - SERVER_NAME=haproxy_balanceador
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.50
+    ports:
+      - "80:80"
+      - 9000:9000 
+    depends_on:
+      - web1
+      - web2
+      - web3
+      - web4
+      - web5
+      - web6
+      - web7
+      - web8
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    restart: always
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus-storage:/prometheus
+      - ./file_sd:/etc/prometheus/file_sd     # <- esta línea es clave
+    ports:
+      - "9090:9090"
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.100
+
+
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: node-exporter
+    restart: always
+    command:
+      - '--path.rootfs=/host'
+    volumes:
+      - '/:/host:ro,rslave'
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.101
+    ports:
+      - "9100:9100"
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    restart: always
+    volumes:
+      - grafana-storage:/var/lib/grafana
+
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.102
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
+
+
+networks:
+  red_web:
+    external: true
+  red_servicios:
+    external: true
+
+volumes:
+  grafana-storage:
+  prometheus-storage:
+
+

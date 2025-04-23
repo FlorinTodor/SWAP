@@ -1,0 +1,156 @@
+# Datos comunes para los servicios
+x-common-apache-config: &common-apache-config
+  image: flotodor-apache-image:p3
+  restart: always
+  volumes:
+    - ./web_flotodor:/var/www/html
+    - ./logs_apache:/var/log/apache2
+
+x-common-nginx_web-config: &common-nginx_web-config
+  image: flotodor-nginx_web-image:p3
+  restart: always
+  volumes:
+    - ./web_flotodor:/usr/share/nginx/html:ro
+    - ./logs_nginx:/var/log/nginx
+
+x-common-traefik-config: &common-traefik-config
+  image: flotodor-traefik_balanceador-image:p3
+  restart: always
+  volumes:
+    - ./logs_traefik:/var/log/traefik
+    - /var/run/docker.sock:/var/run/docker.sock
+    - ./P3-flotodor-traefik/traefik.yaml:/etc/traefik/traefik.yaml:ro
+    - ./P3-flotodor-traefik/dynamic.yaml:/etc/traefik/dynamic/dynamic.yaml:ro
+
+
+services:
+  web1:
+    <<: *common-apache-config
+    container_name: web1
+    environment:
+      - SERVER_NAME=web1
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.2
+      red_servicios:
+        ipv4_address: 192.168.20.2
+    ports:
+      - "8081:80"
+
+  web2:
+    <<: *common-nginx_web-config
+    container_name: web2
+    environment:
+      - SERVER_NAME=web2
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.3
+      red_servicios:
+        ipv4_address: 192.168.20.3
+    ports:
+      - "8082:80"
+
+
+  web3:
+    <<: *common-apache-config
+    container_name: web3
+    environment:
+      - SERVER_NAME=web3
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.4
+      red_servicios:
+        ipv4_address: 192.168.20.4
+    ports:
+      - "8083:80"
+
+  web4:
+    <<: *common-nginx_web-config
+    container_name: web4
+    environment:
+      - SERVER_NAME=web4
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.5
+      red_servicios:
+        ipv4_address: 192.168.20.5
+    ports:
+      - "8084:80"
+
+  web5:
+    <<: *common-apache-config
+    container_name: web5
+    environment:
+      - SERVER_NAME=web5
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.6
+      red_servicios:
+        ipv4_address: 192.168.20.6
+    ports:
+      - "8085:80"
+
+  web6:
+    <<: *common-nginx_web-config
+    container_name: web6
+    environment:
+      - SERVER_NAME=web6
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.7
+      red_servicios:
+        ipv4_address: 192.168.20.7
+    ports:
+      - "8086:80"
+
+  web7:
+    <<: *common-apache-config
+    container_name: web7
+    environment:
+      - SERVER_NAME=web7
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.8
+      red_servicios:
+        ipv4_address: 192.168.20.8
+    ports:
+      - "8087:80"
+
+  web8:
+    <<: *common-nginx_web-config
+    container_name: web8
+    environment:
+      - SERVER_NAME=web8
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.9
+      red_servicios:
+        ipv4_address: 192.168.20.9
+    ports:
+      - "8088:80"
+
+  traefik_balanceador:
+    <<: *common-traefik-config
+    container_name: traefik_balanceador
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.50
+    ports:
+      - "80:80"
+      - "8080:8080"
+    depends_on:
+      - web1
+      - web2
+      - web3
+      - web4
+      - web5
+      - web6
+      - web7
+      - web8
+
+
+networks:
+  red_web:
+    external: true
+  red_servicios:
+    external: true

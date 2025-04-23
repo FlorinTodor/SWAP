@@ -1,0 +1,44 @@
+FROM ubuntu:latest
+
+# Actualizamos los paquetes del sistema
+RUN apt-get update && apt-get upgrade -y
+
+# Instalamos Nginx, PHP y PHP-FPMS
+RUN apt-get install nginx php php-fpm php-cli php-mysql php-mbstring php-xml php-curl php-gd php-zip php-bcmath -y
+
+# Instalamos herramientas de red básicas
+RUN apt install -y net-tools iputils-ping
+
+# Eliminar el index.html por defecto de Nginx
+RUN rm -f /usr/share/nginx/html/index.html
+
+# Instalamos iptables
+RUN apt-get install iptables -y
+# Eliminamos la configuración predeterminada de Nginx
+RUN rm /etc/nginx/sites-enabled/default
+RUN rm /etc/nginx/nginx.conf
+
+# Copiamos nuestra nueva configuración personalizada
+COPY ./P2-flotodor-nginx/config_webs/default /etc/nginx/sites-available/default
+RUN ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+COPY ./P2-flotodor-nginx/config_webs/nginx.conf /etc/nginx/nginx.conf
+
+
+# Copiamos el entrypoint
+COPY ./P2-flotodor-nginx/entrypoint_nginx.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+# Expón el puerto
+EXPOSE 80
+EXPOSE 9100
+
+# Node exporter
+# Al final del Dockerfile
+RUN apt update && apt install -y wget \
+ && wget https://github.com/prometheus/node_exporter/releases/download/v1.8.1/node_exporter-1.8.1.linux-amd64.tar.gz \
+ && tar xzf node_exporter-*.tar.gz \
+ && mv node_exporter-*/node_exporter /usr/local/bin/ \
+ && rm -rf node_exporter*
+
+ # Reemplazamos por completo el ENTRYPOINT original de nginx
+CMD ["/entrypoint.sh"]

@@ -1,0 +1,10 @@
+[Sat Apr 19 01:13:34.120514 2025] [mpm_prefork:notice] [pid 15] AH00163: Apache/2.4.58 (Ubuntu) configured -- resuming normal operations
+[Sat Apr 19 01:13:34.120613 2025] [core:notice] [pid 15] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat Apr 19 01:13:34.168139 2025] [mpm_prefork:notice] [pid 15] AH00163: Apache/2.4.58 (Ubuntu) configured -- resuming normal operations
+[Sat Apr 19 01:13:34.168237 2025] [core:notice] [pid 15] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat Apr 19 01:13:34.555145 2025] [mpm_prefork:notice] [pid 15] AH00163: Apache/2.4.58 (Ubuntu) configured -- resuming normal operations
+[Sat Apr 19 01:13:34.555215 2025] [core:notice] [pid 15] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat Apr 19 01:13:34.650780 2025] [mpm_prefork:notice] [pid 16] AH00163: Apache/2.4.58 (Ubuntu) configured -- resuming normal operations
+[Sat Apr 19 01:13:34.650878 2025] [core:notice] [pid 16] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat Apr 19 01:14:06.142566 2025] [mpm_prefork:notice] [pid 15] AH00163: Apache/2.4.58 (Ubuntu) configured -- resuming normal operations
+[Sat Apr 19 01:14:06.142772 2025] [core:notice] [pid 15] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
