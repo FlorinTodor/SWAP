@@ -6,6 +6,7 @@ x-common-apache-config: &common-apache-config
   volumes:
     - ./web_flotodor:/var/www/html
     - ./logs_apache:/var/log/apache2
+    - ./P3-flotodor-certificados:/etc/apache2/ssl
 
     
 

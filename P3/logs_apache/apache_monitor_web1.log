@@ -1,0 +1,1392 @@
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:36:01 UTC 2025
+[*] Procesos Apache:
+root           1  4.7  0.0   2800  1664 ?        Ss   22:35   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          14  0.0  0.0   2200   256 ?        D    22:36   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:41981        0.0.0.0:*               LISTEN     
+udp        0      0 127.0.0.11:51035        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           8  0.0  0.0 1238112 4608 ?        Dl   22:36   0:00 /usr/local/bin/node_exporter
+root          20  0.0  0.0   7888  3712 ?        R    22:36   0:00 ps aux --sort=-%mem
+root           7  0.0  0.0   4324  3200 ?        S    22:36   0:00 /bin/bash /usr/local/bin/apache_monitor.sh
+root          14  0.0  0.0   5292  2816 ?        R    22:36   0:00 /usr/sbin/apache2 -D FOREGROUND
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:36:02 UTC 2025
+[*] Procesos Apache:
+root           1  8.0  0.0   2800  1792 ?        Ss   22:36   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.0   4984  2304 ?        R    22:36   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:33697        0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:57050        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           8  0.0  0.0 1240544 12544 ?       Sl   22:36   0:00 /usr/local/bin/node_exporter
+root          15  0.0  0.0  55924 10368 ?        R    22:36   0:00 /usr/sbin/apache2 -D FOREGROUND
+root          21  0.0  0.0   7888  4096 ?        R    22:36   0:00 ps aux --sort=-%mem
+root           7  0.0  0.0   4324  3200 ?        S    22:36   0:00 /bin/bash /usr/local/bin/apache_monitor.sh
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:36:03 UTC 2025
+[*] Procesos Apache:
+root           1  8.6  0.0   2800  1664 ?        Ss   22:36   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.0   5016  2432 ?        R    22:36   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:34035        0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:55161        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           8  0.0  0.0 1240032 12800 ?       Sl   22:36   0:00 /usr/local/bin/node_exporter
+root          15  0.0  0.0  56436 10880 ?        R    22:36   0:00 /usr/sbin/apache2 -D FOREGROUND
+root          20  0.0  0.0   7888  3584 ?        R    22:36   0:00 ps aux --sort=-%mem
+root           7  0.0  0.0   4324  3072 ?        S    22:36   0:00 /bin/bash /usr/local/bin/apache_monitor.sh
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:36:03 UTC 2025
+[*] Procesos Apache:
+root           1  8.3  0.0   2800  1792 ?        Ss   22:36   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          16  0.0  0.0   5008  2432 ?        R    22:36   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:33291        0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:44896        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           8  0.0  0.0 1240288 12800 ?       Sl   22:36   0:00 /usr/local/bin/node_exporter
+root          16 50.0  0.0  55924 10496 ?        R    22:36   0:00 /usr/sbin/apache2 -D FOREGROUND
+root          21  0.0  0.0   7888  3712 ?        R    22:36   0:00 ps aux --sort=-%mem
+root           7  0.0  0.0   4324  3328 ?        S    22:36   0:00 /bin/bash /usr/local/bin/apache_monitor.sh
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:36:04 UTC 2025
+[*] Procesos Apache:
+root           1  8.3  0.0   2800  1664 ?        Ss   22:36   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          14  0.0  0.0   5416  3456 ?        R    22:36   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:33801        0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:56814        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          14  0.0  0.0  56832 13824 ?        S    22:36   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12544 ?       Sl   22:36   0:00 /usr/local/bin/node_exporter
+root          20  0.0  0.0   7888  3968 ?        R    22:36   0:00 ps aux --sort=-%mem
+root           7  0.0  0.0   4324  3072 ?        S    22:36   0:00 /bin/bash /usr/local/bin/apache_monitor.sh
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:36:06 UTC 2025
+[*] Procesos Apache:
+root           1  7.6  0.0   2800  1792 ?        Ss   22:36   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.0   5144  3072 ?        D    22:36   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:38167        0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:49536        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           8  0.0  0.0 1240032 12544 ?       Sl   22:36   0:00 /usr/local/bin/node_exporter
+root          15  0.0  0.0  56556 11520 ?        R    22:36   0:00 /usr/sbin/apache2 -D FOREGROUND
+root          20  0.0  0.0   7888  3968 ?        R    22:36   0:00 ps aux --sort=-%mem
+root           7  0.0  0.0   4324  3072 ?        S    22:36   0:00 /bin/bash /usr/local/bin/apache_monitor.sh
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:36:10 UTC 2025
+[*] Procesos Apache:
+root           1  7.6  0.0   2800  1792 ?        Ss   22:36   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          17  0.0  0.0   5008  2560 ?        R    22:36   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:34657        0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:54509        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:36   0:00 /usr/local/bin/node_exporter
+root          17  0.0  0.0  56532 11520 ?        R    22:36   0:00 /usr/sbin/apache2 -D FOREGROUND
+root          20  0.0  0.0   7888  3968 ?        R    22:36   0:00 ps aux --sort=-%mem
+root           7  0.0  0.0   4324  3456 ?        S    22:36   0:00 /bin/bash /usr/local/bin/apache_monitor.sh
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:36:16 UTC 2025
+[*] Procesos Apache:
+root           1 16.6  0.0   2800  1664 ?        Ss   22:36   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.0   5008  2560 ?        R    22:36   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:38327        0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:51643        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           8  0.0  0.0 1240032 12928 ?       Sl   22:36   0:00 /usr/local/bin/node_exporter
+root          15  0.0  0.0  56548 11392 ?        R    22:36   0:00 /usr/sbin/apache2 -D FOREGROUND
+root          20  0.0  0.0   7888  3968 ?        R    22:36   0:00 ps aux --sort=-%mem
+root           7  0.0  0.0   4324  3328 ?        S    22:36   0:00 /bin/bash /usr/local/bin/apache_monitor.sh
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:36:30 UTC 2025
+[*] Procesos Apache:
+root           1  5.8  0.0   2800  1920 ?        Ss   22:36   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.0   5008  2560 ?        R    22:36   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:42409        0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:60867        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           8  0.0  0.0 1240288 12928 ?       Sl   22:36   0:00 /usr/local/bin/node_exporter
+root          15  0.0  0.0  56604 11776 ?        R    22:36   0:00 /usr/sbin/apache2 -D FOREGROUND
+root          20  0.0  0.0   7888  3968 ?        R    22:36   0:00 ps aux --sort=-%mem
+root           7  0.0  0.0   4324  3200 ?        S    22:36   0:00 /bin/bash /usr/local/bin/apache_monitor.sh
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:36:56 UTC 2025
+[*] Procesos Apache:
+root           1 18.1  0.0   2800  1664 ?        Ss   22:36   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.0   5008  2432 ?        R    22:36   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:41333        0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:49882        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:36   0:00 /usr/local/bin/node_exporter
+root          15  0.0  0.0  56580 11520 ?        R    22:36   0:00 /usr/sbin/apache2 -D FOREGROUND
+root          20  0.0  0.0   7888  3840 ?        R    22:36   0:00 ps aux --sort=-%mem
+root           7  0.0  0.0   4324  3456 ?        S    22:36   0:00 /bin/bash /usr/local/bin/apache_monitor.sh
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:37:47 UTC 2025
+[*] Procesos Apache:
+root           1 16.6  0.0   2800  1792 ?        Ss   22:37   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.0   5080  2560 ?        R    22:37   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:33927        0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:34875        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           8  0.0  0.0 1240288 12800 ?       Sl   22:37   0:00 /usr/local/bin/node_exporter
+root          15  0.0  0.0  56516 11392 ?        R    22:37   0:00 /usr/sbin/apache2 -D FOREGROUND
+root          20  0.0  0.0   7888  3968 ?        R    22:37   0:00 ps aux --sort=-%mem
+root           7  0.0  0.0   4324  3328 ?        S    22:37   0:00 /bin/bash /usr/local/bin/apache_monitor.sh
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:38:47 UTC 2025
+[*] Procesos Apache:
+root           1  5.0  0.0   2800  1792 ?        Ss   22:38   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.0   5008  2560 ?        R    22:38   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:38855        0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:47996        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           8  0.0  0.0 1240288 12928 ?       Sl   22:38   0:00 /usr/local/bin/node_exporter
+root          20  0.0  0.0   7888  3968 ?        R    22:38   0:00 ps aux --sort=-%mem
+root           7  0.0  0.0   4324  3328 ?        S    22:38   0:00 /bin/bash /usr/local/bin/apache_monitor.sh
+root          15  0.0  0.0   5144  3072 ?        D    22:38   0:00 /usr/sbin/apache2 -D FOREGROUND
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:39:48 UTC 2025
+[*] Procesos Apache:
+root           1  2.9  0.0   2800  1792 ?        Ss   22:39   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          16  0.0  0.0   5008  2304 ?        R    22:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:37751        0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:42929        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          16  0.0  0.0  56604 13184 ?        R    22:39   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 13056 ?       Sl   22:39   0:00 /usr/local/bin/node_exporter
+root          21  0.0  0.0   7888  4096 ?        R    22:39   0:00 ps aux --sort=-%mem
+root           7  0.0  0.0   4324  3072 ?        S    22:39   0:00 /bin/bash /usr/local/bin/apache_monitor.sh
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:40:48 UTC 2025
+[*] Procesos Apache:
+root           1  7.6  0.0   2800  1920 ?        Ss   22:40   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.0   5008  2560 ?        R    22:40   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:35821        0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:36285        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           8  0.0  0.0 1240288 13056 ?       Sl   22:40   0:00 /usr/local/bin/node_exporter
+root          15  0.0  0.0  56548 11648 ?        R    22:40   0:00 /usr/sbin/apache2 -D FOREGROUND
+root          20  0.0  0.0   7888  3840 ?        R    22:40   0:00 ps aux --sort=-%mem
+root           7  0.0  0.0   4324  3328 ?        S    22:40   0:00 /bin/bash /usr/local/bin/apache_monitor.sh
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:41:48 UTC 2025
+[*] Procesos Apache:
+root           1  5.8  0.0   2800  1536 ?        Ss   22:41   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.0   5008  2432 ?        R    22:41   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:39247        0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:42587        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           8  0.0  0.0 1240288 13312 ?       Sl   22:41   0:00 /usr/local/bin/node_exporter
+root          15  0.0  0.0  56476 11264 ?        R    22:41   0:00 /usr/sbin/apache2 -D FOREGROUND
+root          20  0.0  0.0   7888  3840 ?        R    22:41   0:00 ps aux --sort=-%mem
+root           7  0.0  0.0   4324  3456 ?        S    22:41   0:00 /bin/bash /usr/local/bin/apache_monitor.sh
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:42:17 UTC 2025
+[*] Procesos Apache:
+root           1  2.7  0.0   2800  1792 ?        Ss   22:42   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.0   5008  2560 ?        R    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:45651        0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:41434        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:42   0:00 /usr/local/bin/node_exporter
+root          15  0.0  0.0  56388 11520 ?        R    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+root          20  0.0  0.0   7888  4096 ?        R    22:42   0:00 ps aux --sort=-%mem
+root           7  0.0  0.0   4324  3456 ?        S    22:42   0:00 /bin/bash /usr/local/bin/apache_monitor.sh
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:42:47 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1792 ?        Ss   22:42   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.1 204624 25328 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.1 204860 17324 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204860 16812 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.0 204656  8108 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204656  8108 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.0 204656  8108 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:45651        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:41434        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          15  0.0  0.1 204624 25328 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.1 204860 17324 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204860 16812 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:42   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:43:17 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1792 ?        Ss   22:42   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.1 204624 25328 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.1 204860 17324 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204860 16812 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.0 204656  8108 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204656  8108 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.0 204656  8108 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:45651        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:41434        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          15  0.0  0.1 204624 25328 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.1 204860 17324 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204860 16812 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:42   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:43:47 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1792 ?        Ss   22:42   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.1 204624 25328 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.1 204860 17324 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204860 16812 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.0 204656  8108 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204656  8108 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.0 204656  8108 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:45651        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:41434        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          15  0.0  0.1 204624 25328 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.1 204860 17324 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204860 16812 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:42   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:44:17 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1792 ?        Ss   22:42   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.1 204624 25328 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.1 204860 17324 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204860 16812 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.0 204656  8108 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204656  8108 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.0 204656  8108 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:45651        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:41434        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          15  0.0  0.1 204624 25328 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.1 204860 17324 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204860 16812 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:42   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:44:47 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1792 ?        Ss   22:42   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.1 204624 25328 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.1 204860 17324 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204860 16812 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.0 204656  8108 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204656  8108 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.0 204656  8108 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:45651        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:41434        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          15  0.0  0.1 204624 25328 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.1 204860 17324 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204860 16812 ?        S    22:42   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:42   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:45:12 UTC 2025
+[*] Procesos Apache:
+root           1  6.2  0.0   2800  1792 ?        Ss   22:45   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          17  0.0  0.0   5144  3072 ?        D    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:41703        0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:50783        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           8  0.0  0.0 1240032 12544 ?       Sl   22:45   0:00 /usr/local/bin/node_exporter
+root          17  0.0  0.0  55720  7552 ?        R    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+root          21  0.0  0.0   7888  3968 ?        R    22:45   0:00 ps aux --sort=-%mem
+root           7  0.0  0.0   4324  3328 ?        S    22:45   0:00 /bin/bash /usr/local/bin/apache_monitor.sh
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:45:42 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1792 ?        Ss   22:45   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          17  0.0  0.1 204624 24060 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204860 17452 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.0 204656  8108 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204656  8108 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.0 204656  8108 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204656  8108 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.11:41703        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:50783        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          17  0.0  0.1 204624 24060 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204860 17452 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240032 12544 ?       Sl   22:45   0:00 /usr/local/bin/node_exporter
+www-data      25  0.0  0.0 204656  8108 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:46:12 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1792 ?        Ss   22:45   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          17  0.0  0.1 204624 24060 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204860 17452 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.0 204684 11436 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204656  8108 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.0 204656  8108 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204656  8108 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.11:41703        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:50783        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          17  0.0  0.1 204624 24060 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204860 17452 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240032 12544 ?       Sl   22:45   0:00 /usr/local/bin/node_exporter
+www-data      25  0.0  0.0 204684 11436 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:46:42 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1792 ?        Ss   22:45   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          17  0.0  0.1 204624 24060 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204860 17452 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.0 204684 11436 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204656  8108 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.0 204656  8108 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204656  8108 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.11:41703        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:50783        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          17  0.0  0.1 204624 24060 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204860 17452 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240032 12544 ?       Sl   22:45   0:00 /usr/local/bin/node_exporter
+www-data      25  0.0  0.0 204684 11436 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:47:12 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1792 ?        Ss   22:45   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          17  0.0  0.1 204624 24060 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204872 17452 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.0 204684 11436 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204684 11308 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204860 17324 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204684 11052 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      53  0.0  0.0 204656  8108 ?        S    22:46   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.11:41703        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:50783        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          17  0.0  0.1 204624 24060 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204872 17452 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204860 17324 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240032 12544 ?       Sl   22:45   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:47:42 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1792 ?        Ss   22:45   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          17  0.0  0.1 204624 24060 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204872 17452 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.0 204684 11436 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204684 11308 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204860 17324 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204684 11052 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      53  0.0  0.0 204656  8108 ?        S    22:46   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.11:41703        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:50783        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          17  0.0  0.1 204624 24060 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204872 17452 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204860 17324 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240032 12544 ?       Sl   22:45   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:48:12 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1792 ?        Ss   22:45   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          17  0.0  0.1 204624 24060 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204872 17452 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.0 204684 11436 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204684 11308 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204860 17324 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204684 11052 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      53  0.0  0.0 204656  8108 ?        S    22:46   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.11:41703        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:50783        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          17  0.0  0.1 204624 24060 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204872 17452 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204860 17324 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240032 12544 ?       Sl   22:45   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:48:42 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1792 ?        Ss   22:45   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          17  0.0  0.1 204624 24060 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204872 17452 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.0 204684 11436 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204684 11308 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204860 17324 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204684 11052 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      53  0.0  0.0 204656  8108 ?        S    22:46   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.11:41703        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:50783        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          17  0.0  0.1 204624 24060 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204872 17452 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204860 17324 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240032 12544 ?       Sl   22:45   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:49:12 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1792 ?        Ss   22:45   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          17  0.0  0.1 204624 24060 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204872 17452 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.0 204684 11436 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204684 11308 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204860 17324 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204684 11052 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      53  0.0  0.0 204656  8108 ?        S    22:46   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.11:41703        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:50783        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          17  0.0  0.1 204624 24060 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204872 17452 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204860 17324 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240032 12544 ?       Sl   22:45   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:49:42 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1792 ?        Ss   22:45   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          17  0.0  0.1 204624 24060 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204872 17452 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.0 204684 11436 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204684 11308 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204860 17324 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204684 11052 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      53  0.0  0.0 204656  8108 ?        S    22:46   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.11:41703        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:50783        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          17  0.0  0.1 204624 24060 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204872 17452 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204860 17324 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240032 12544 ?       Sl   22:45   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:50:12 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1792 ?        Ss   22:45   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          17  0.0  0.1 204624 24060 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204872 17452 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.0 204684 11436 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204684 11308 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204860 17324 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204684 11052 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      53  0.0  0.0 204656  8108 ?        S    22:46   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.11:41703        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:50783        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          17  0.0  0.1 204624 24060 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204872 17452 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204860 17324 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240032 12544 ?       Sl   22:45   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:50:42 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1792 ?        Ss   22:45   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          17  0.0  0.1 204624 24060 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204872 17452 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.0 204684 11436 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204684 11308 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204860 17324 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204684 11052 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      53  0.0  0.0 204656  8108 ?        S    22:46   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.11:41703        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:50783        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          17  0.0  0.1 204624 24060 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204872 17452 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204860 17324 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240032 12544 ?       Sl   22:45   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:51:12 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1792 ?        Ss   22:45   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          17  0.0  0.1 204624 24060 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204872 17452 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.0 204684 11436 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204684 11308 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204860 17324 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204684 11052 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      53  0.0  0.0 204656  8108 ?        S    22:46   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.11:41703        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:50783        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          17  0.0  0.1 204624 24060 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.1 204872 17452 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204860 17324 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240032 12544 ?       Sl   22:45   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:51:42 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1792 ?        Ss   22:45   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          17  0.0  0.1 204572 24364 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     173  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     174  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     175  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     176  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     177  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.11:41703        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:50783        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          17  0.0  0.1 204572 24364 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240032 12544 ?       Sl   22:45   0:00 /usr/local/bin/node_exporter
+www-data     173  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     174  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:52:12 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1792 ?        Ss   22:45   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          17  0.0  0.1 204572 24364 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     173  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     174  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     175  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     176  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     177  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.11:41703        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:50783        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          17  0.0  0.1 204572 24364 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240032 12544 ?       Sl   22:45   0:00 /usr/local/bin/node_exporter
+www-data     173  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     174  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:52:42 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1792 ?        Ss   22:45   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          17  0.0  0.1 204572 24364 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     173  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     174  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     175  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     176  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     177  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.11:41703        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:50783        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          17  0.0  0.1 204572 24364 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240032 12544 ?       Sl   22:45   0:00 /usr/local/bin/node_exporter
+www-data     173  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     174  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:53:12 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1792 ?        Ss   22:45   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          17  0.0  0.1 204572 24364 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     173  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     174  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     175  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     176  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     177  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.11:41703        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:50783        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          17  0.0  0.1 204572 24364 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240032 12544 ?       Sl   22:45   0:00 /usr/local/bin/node_exporter
+www-data     173  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     174  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:53:42 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1792 ?        Ss   22:45   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          17  0.0  0.1 204572 24364 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     173  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     174  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     175  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     176  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     177  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.11:41703        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:50783        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          17  0.0  0.1 204572 24364 ?        S    22:45   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240032 12544 ?       Sl   22:45   0:00 /usr/local/bin/node_exporter
+www-data     173  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data     174  0.0  0.0 204636  8532 ?        S    22:51   0:00 /usr/sbin/apache2 -D FOREGROUND
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:55:43 UTC 2025
+[*] Procesos Apache:
+root           1  3.7  0.0   2800  1664 ?        Ss   22:55   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.0   5008  2176 ?        R    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:44061        0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:38132        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:55   0:00 /usr/local/bin/node_exporter
+root          20  0.0  0.0   7888  3968 ?        R    22:55   0:00 ps aux --sort=-%mem
+root           7  0.0  0.0   4324  3328 ?        S    22:55   0:00 /bin/bash /usr/local/bin/apache_monitor.sh
+root          15  0.0  0.0   5144  2816 ?        D    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:56:13 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1664 ?        Ss   22:55   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.1  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 204804 11340 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 204804 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204936 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204776  8012 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:44061        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:38132        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          15  0.1  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:55   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:56:43 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1664 ?        Ss   22:55   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 204804 11340 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 204804 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204936 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204776  8012 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:44061        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:38132        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:55   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:57:13 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1664 ?        Ss   22:55   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 204804 11340 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 204804 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204936 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204776  8012 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:44061        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:38132        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:55   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:57:43 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1664 ?        Ss   22:55   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 204804 11340 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 204804 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204936 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204776  8012 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:44061        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:38132        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:55   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:58:13 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1664 ?        Ss   22:55   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 204804 11340 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 204804 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204936 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204776  8012 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:44061        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:38132        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:55   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:58:43 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1664 ?        Ss   22:55   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 204804 11340 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 204804 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204936 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204776  8012 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:44061        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:38132        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:55   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:59:13 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1664 ?        Ss   22:55   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 204804 11340 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 204804 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204936 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204776  8012 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:44061        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:38132        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:55   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 22:59:43 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1664 ?        Ss   22:55   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 204804 11340 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 204804 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204936 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204776  8012 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:44061        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:38132        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:55   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 23:00:13 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1664 ?        Ss   22:55   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 204804 11340 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 204804 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204936 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204776  8012 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:44061        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:38132        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:55   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 23:00:43 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1664 ?        Ss   22:55   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 204804 11340 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 204804 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204936 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204776  8012 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:44061        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:38132        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:55   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 23:01:13 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1664 ?        Ss   22:55   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 204804 11340 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 204804 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204936 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204776  8012 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:44061        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:38132        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:55   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 23:01:43 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1664 ?        Ss   22:55   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 204804 11340 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 204804 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204936 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204776  8012 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:44061        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:38132        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:55   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 23:02:13 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1664 ?        Ss   22:55   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 204804 11340 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 204804 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204936 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204776  8012 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:44061        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:38132        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:55   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 23:02:43 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1664 ?        Ss   22:55   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 204804 11340 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 204804 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204936 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204776  8012 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:44061        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:38132        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:55   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 23:03:13 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1664 ?        Ss   22:55   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 204804 11340 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 204804 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204936 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204776  8012 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:44061        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:38132        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:55   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 23:03:43 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1664 ?        Ss   22:55   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 204804 11340 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 204804 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204936 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204776  8012 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:44061        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:38132        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:55   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 23:04:13 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1664 ?        Ss   22:55   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 204804 11340 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 204804 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204936 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204776  8012 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:44061        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:38132        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:55   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 23:04:43 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1664 ?        Ss   22:55   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 204804 11340 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 204804 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204936 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204776  8012 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:44061        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:38132        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:55   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 23:05:13 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1664 ?        Ss   22:55   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 204804 11340 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 204804 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204936 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204776  8012 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:44061        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:38132        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:55   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 23:05:43 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1664 ?        Ss   22:55   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 204804 11340 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 204804 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204936 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204776  8012 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:44061        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:38132        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:55   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 23:06:13 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1664 ?        Ss   22:55   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 204804 11340 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 204804 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204936 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204776  8012 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:44061        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:38132        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:55   0:00 /usr/local/bin/node_exporter
+----------------------------
+[+] Monitoreando Apache en web1 - Thu Apr 24 23:06:43 UTC 2025
+[*] Procesos Apache:
+root           1  0.0  0.0   2800  1664 ?        Ss   22:55   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      23  0.0  0.0 204804 11340 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      24  0.0  0.0 204804 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      26  0.0  0.0 204936 11084 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      28  0.0  0.0 204776  8012 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:44061        0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN     
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:38132        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root          15  0.0  0.1 204736 24968 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      25  0.0  0.1 204976 17612 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+www-data      27  0.0  0.1 204980 16972 ?        S    22:55   0:00 /usr/sbin/apache2 -D FOREGROUND
+root           8  0.0  0.0 1240288 12672 ?       Sl   22:55   0:00 /usr/local/bin/node_exporter
+----------------------------

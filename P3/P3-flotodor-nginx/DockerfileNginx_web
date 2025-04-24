@@ -28,8 +28,9 @@ COPY ./P3-flotodor-nginx/config_webs/nginx.conf /etc/nginx/nginx.conf
 COPY ./P3-flotodor-nginx/entrypoint_nginx.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-# Expón el puerto
+# Exponemos el puerto 80 para HTTP y 443 para HTTPS y 9100 para el node exporter
 EXPOSE 80
+EXPOSE 443
 EXPOSE 9100
 
 # Node exporter

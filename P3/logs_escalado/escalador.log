@@ -4,3 +4,11 @@
 [2025-04-19 03:14:49] [↻] haproxy_balanceador reiniciado
 [2025-04-19 03:24:51] [+] web10 creado
 [2025-04-19 03:24:53] [↻] haproxy_balanceador reiniciado
+[2025-04-24 14:31:58] [+] web9 creado
+[2025-04-24 14:31:59] [↻] haproxy_balanceador reiniciado
+[2025-04-24 14:32:40] [↓] web9 eliminado (dinámica)
+[2025-04-24 14:32:40] [↓] web9 eliminado (dinámica)
+[2025-04-24 14:32:41] [↻] haproxy_balanceador reiniciado
+[2025-04-24 14:32:41] [↻] haproxy_balanceador reiniciado
+[2025-04-24 14:35:57] [!] Señal de parada detectada. Deteniendo escalador...
+[2025-04-24 14:35:57] [!] Señal de parada detectada. Deteniendo escalador...
