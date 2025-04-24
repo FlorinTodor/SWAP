@@ -14,3 +14,19 @@
 [Thu Apr 24 22:55:43.161031 2025] [ssl:warn] [pid 15] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
 [Thu Apr 24 22:55:43.161917 2025] [ssl:warn] [pid 15] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
 [Thu Apr 24 22:55:43.161939 2025] [ssl:warn] [pid 15] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Apr 24 23:08:27.928052 2025] [ssl:warn] [pid 15] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Thu Apr 24 23:08:27.928123 2025] [ssl:warn] [pid 15] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Apr 24 23:08:27.953607 2025] [ssl:warn] [pid 15] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Thu Apr 24 23:08:27.953636 2025] [ssl:warn] [pid 15] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Apr 24 23:08:28.017828 2025] [ssl:warn] [pid 16] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Thu Apr 24 23:08:28.017912 2025] [ssl:warn] [pid 16] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Apr 24 23:08:28.048477 2025] [ssl:warn] [pid 14] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Thu Apr 24 23:08:28.048531 2025] [ssl:warn] [pid 14] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Apr 24 23:08:28.051130 2025] [ssl:warn] [pid 16] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Thu Apr 24 23:08:28.051163 2025] [ssl:warn] [pid 16] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Apr 24 23:08:28.065631 2025] [ssl:warn] [pid 15] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Thu Apr 24 23:08:28.065685 2025] [ssl:warn] [pid 15] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Apr 24 23:08:28.068358 2025] [ssl:warn] [pid 14] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Thu Apr 24 23:08:28.068383 2025] [ssl:warn] [pid 14] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Apr 24 23:08:28.084856 2025] [ssl:warn] [pid 15] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Thu Apr 24 23:08:28.084885 2025] [ssl:warn] [pid 15] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
