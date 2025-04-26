@@ -3,20 +3,45 @@ server {
     listen [::]:80 default_server;
 
     root /usr/share/nginx/html;
-    index index.php index.html; 
+    index index.php index.html;
 
     server_name _;
 
-
     location / {
-    try_files $uri $uri/ /index.php?$query_string;
-}
+        try_files $uri $uri/ /index.php?$query_string;
+    }
 
-
-    
     location ~ \.php$ {
         include snippets/fastcgi-php.conf;
-        fastcgi_pass unix:/run/php/php8.3-fpm.sock; 
+        fastcgi_pass unix:/run/php/php8.3-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+
+    location ~ /\. {
+        deny all;
+    }
+}
+
+server {
+    listen 443 ssl default_server;
+    listen [::]:443 ssl default_server;
+
+    root /usr/share/nginx/html;
+    index index.php index.html;
+
+    server_name _;
+
+    ssl_certificate     /etc/nginx/ssl/certificado_flotodor.crt;
+    ssl_certificate_key /etc/nginx/ssl/certificado_flotodor.key;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php8.3-fpm.sock;
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         include fastcgi_params;
     }

@@ -44,41 +44,19 @@ RUN apt update && apt install -y wget \
  && mv node_exporter-*/node_exporter /usr/local/bin/ \
  && rm -rf node_exporter*
 
- # ------- Copiamos los ficheros que necesitaremos en el directorio tmp -------
-COPY P3-flotodor-certificados/certificado_flotodor.crt /tmp/
-COPY P3-flotodor-certificados/certificado_flotodor.key /tmp/
-COPY P3-flotodor-apache/flotodor-apache-ssl.conf       /tmp/
-# ------------------------------------------------------
+ 
+# ----------------------------------------------
+# Parte SSL: certificados + configuración SSL
+# ----------------------------------------------
 
-
-# --- SSL ------------------------------------------------------------------
-    RUN apt-get update && apt-get install -y openssl \
-    && a2enmod ssl headers rewrite \
-    && mkdir -p /etc/apache2/ssl \
-    \
-    # Copiamos certificado y clave
-    && cp /tmp/certificado_flotodor.crt /etc/apache2/ssl/ \
-    && cp /tmp/certificado_flotodor.key /etc/apache2/ssl/ \
-    && chmod 600 /etc/apache2/ssl/certificado_flotodor.key \
-    && chmod 644 /etc/apache2/ssl/certificado_flotodor.crt \
-    \
-    # Deshabilitamos los vhosts por defecto
-    && a2dissite 000-default.conf default-ssl.conf \
-    \
-    # Copiamos y habilitamos nuestro vhost HTTPS
-    && cp /tmp/flotodor-apache-ssl.conf /etc/apache2/sites-available/ \
-    && a2ensite flotodor-apache-ssl.conf
-   # --------------------------------------------------------------------------
-
-
-
-
-ENTRYPOINT ["/usr/local/bin/entrypoint_apache.sh"]
-#CMD [ "apache2ctl", "-D", "FOREGROUND" ] # solo ejecutar apache 
-
-
-# Exponemos el puerto 80 para HTTP y 443 para HTTPS , 9100 para el node exporter
-EXPOSE 80
-EXPOSE 9100
-EXPOSE 443
-
+    RUN mkdir -p /etc/apache2/ssl/
+    COPY P3-flotodor-certificados/certificado_flotodor.crt /etc/apache2/ssl/certificado_flotodor.crt
+    COPY P3-flotodor-certificados/certificado_flotodor.key /etc/apache2/ssl/certificado_flotodor.key
+    
+    RUN chmod 600 /etc/apache2/ssl/certificado_flotodor.crt
+    COPY P3-flotodor-apache/flotodor-apache-ssl.conf /etc/apache2/sites-available/flotodor-apache-ssl.conf
+    RUN a2enmod ssl && a2dissite default-ssl && a2ensite flotodor-apache-ssl
+    
+    
+    EXPOSE 80 443 9100
+    ENTRYPOINT ["/usr/local/bin/entrypoint_apache.sh"]

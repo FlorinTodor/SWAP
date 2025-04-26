@@ -107,19 +107,19 @@ function build_image(){
   case $1 in
     apache)
       docker rmi flotodor-apache-image:p3 -f
-      docker build -t flotodor-apache-image:p3 -f ./P3-flotodor-apache/DockerfileApache_florin .
+      docker build --no-cache -t flotodor-apache-image:p3 -f ./P3-flotodor-apache/DockerfileApache_florin .
       ;;
     nginx)
       docker rmi flotodor-nginx_web-image:p3 -f
-      docker build -t flotodor-nginx_web-image:p3 -f ./P3-flotodor-nginx/DockerfileNginx_web .
+      docker build --no-cache -t flotodor-nginx_web-image:p3 -f ./P3-flotodor-nginx/DockerfileNginx_web .
       ;;
     nginx_balanceador)
       docker rmi flotodor-nginx_balanceador-image:p3 -f
-      docker build -t flotodor-nginx_balanceador-image:p3 -f ./P3-flotodor-nginx/DockerfileNginx_balanceador .
+      docker build --no-cache  -t flotodor-nginx_balanceador-image:p3 -f ./P3-flotodor-nginx/DockerfileNginx_balanceador .
       ;;
     haproxy_balanceador)
       docker rmi flotodor-haproxy_balanceador-image:p3 -f
-      docker build -t flotodor-haproxy_balanceador-image:p3 -f ./P3-flotodor-haproxy/DockerfileHAproxy_balanceador .
+      docker build --no-cache -t flotodor-haproxy_balanceador-image:p3 -f ./P3-flotodor-haproxy/DockerfileHAproxy_balanceador .
       ;;
     traefik_balanceador)
       docker rmi flotodor-traefik_balanceador-image:p3 -f

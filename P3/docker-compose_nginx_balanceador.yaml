@@ -6,8 +6,6 @@ x-common-apache-config: &common-apache-config
   volumes:
     - ./web_flotodor:/var/www/html
     - ./logs_apache:/var/log/apache2
-    - ./P3-flotodor-certificados:/etc/apache2/ssl
-
     
 
 # Datos comunes para todos los servicios de nginx
@@ -17,11 +15,14 @@ x-common-nginx_web-config: &common-nginx_web-config
   volumes:
     - ./web_flotodor:/usr/share/nginx/html:ro
     - ./logs_nginx:/var/log/nginx
+   
 
 x-common-nginx_balanceador-config: &common-nginx_balanceador-config
   image: flotodor-nginx_balanceador-image:p3
   restart: always
   volumes:
+    - ./P3-flotodor-nginx/config_balanceador/flotodor-nginx-ssl.conf:/etc/nginx/nginx.conf  # << Montar nginx.conf SSL
+    - ./P3-flotodor-certificados:/etc/nginx/ssl                                              # << Montar certificados SSL
     - ./logs_nginx:/var/log/nginx
 
 ### TENGO QUE BUSCAR ALGUNA FORMA PARA QUE NO SE REPITA TANTO CODIGO ###
@@ -140,6 +141,7 @@ services:
         ipv4_address: 192.168.10.50
     ports:
       - "80:80"
+      - "443:443"
     depends_on:
       - web1
       - web2

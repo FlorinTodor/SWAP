@@ -32,3 +32,6 @@ localhost:80 192.168.10.50 - - [24/Apr/2025:23:08:50 +0000] "GET / HTTP/1.0" 200
 localhost:80 192.168.10.50 - - [24/Apr/2025:23:08:51 +0000] "GET / HTTP/1.0" 200 2676 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
 localhost:80 192.168.10.50 - - [24/Apr/2025:23:08:51 +0000] "GET / HTTP/1.0" 200 2676 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
 localhost:80 192.168.10.50 - - [24/Apr/2025:23:08:51 +0000] "GET / HTTP/1.0" 200 2676 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+localhost:80 192.168.10.1 - - [24/Apr/2025:23:29:23 +0000] "GET / HTTP/1.1" 200 2713 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+localhost:80 192.168.10.1 - - [24/Apr/2025:23:29:26 +0000] "GET / HTTP/1.1" 200 2712 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+localhost:80 192.168.10.1 - - [24/Apr/2025:23:29:45 +0000] "GET /favicon.ico HTTP/1.1" 404 491 "http://192.168.10.2/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
