@@ -126,3 +126,19 @@
 [Sat Apr 26 00:34:55.092238 2025] [ssl:warn] [pid 15] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
 [Sat Apr 26 00:34:55.111069 2025] [ssl:warn] [pid 15] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
 [Sat Apr 26 00:34:55.111106 2025] [ssl:warn] [pid 15] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Apr 27 17:16:30.399561 2025] [ssl:warn] [pid 14] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Apr 27 17:16:30.417014 2025] [ssl:warn] [pid 15] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Apr 27 17:16:30.453712 2025] [ssl:warn] [pid 18] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Apr 27 17:16:30.467066 2025] [ssl:warn] [pid 15] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Apr 27 17:16:30.467569 2025] [ssl:warn] [pid 14] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Apr 27 17:16:30.475297 2025] [ssl:warn] [pid 15] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Apr 27 17:16:30.480886 2025] [ssl:warn] [pid 18] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Apr 27 17:16:30.496181 2025] [ssl:warn] [pid 15] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Apr 27 17:35:21.641514 2025] [ssl:warn] [pid 11] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Apr 27 17:35:21.664736 2025] [ssl:warn] [pid 15] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Apr 27 17:35:21.690299 2025] [ssl:warn] [pid 11] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Apr 27 17:35:21.695699 2025] [ssl:warn] [pid 15] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Apr 27 17:35:21.778066 2025] [ssl:warn] [pid 17] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Apr 27 17:35:21.797958 2025] [ssl:warn] [pid 17] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Apr 27 17:35:21.923743 2025] [ssl:warn] [pid 15] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Apr 27 17:35:21.944740 2025] [ssl:warn] [pid 15] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
