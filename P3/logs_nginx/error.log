@@ -70,3 +70,25 @@
 2025/04/27 17:06:49 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/servidor-web.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/servidor-web.crt, r) error:10000080:BIO routines::no such file)
 2025/04/27 17:07:15 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/servidor-web.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/servidor-web.crt, r) error:10000080:BIO routines::no such file)
 2025/04/27 17:08:06 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/servidor-web.crt": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/servidor-web.crt, r) error:10000080:BIO routines::no such file)
+2025/04/29 19:37:18 [emerg] 1#1: unknown directive "SSLProtocol" in /etc/nginx/nginx.conf:43
+2025/04/29 19:37:18 [emerg] 1#1: unknown directive "SSLProtocol" in /etc/nginx/nginx.conf:43
+2025/04/29 19:37:19 [emerg] 1#1: unknown directive "SSLProtocol" in /etc/nginx/nginx.conf:43
+2025/04/29 19:37:19 [emerg] 1#1: unknown directive "SSLProtocol" in /etc/nginx/nginx.conf:43
+2025/04/29 19:37:20 [emerg] 1#1: unknown directive "SSLProtocol" in /etc/nginx/nginx.conf:43
+2025/04/29 19:37:22 [emerg] 1#1: unknown directive "SSLProtocol" in /etc/nginx/nginx.conf:43
+2025/04/29 19:37:25 [emerg] 1#1: unknown directive "SSLProtocol" in /etc/nginx/nginx.conf:43
+2025/04/29 19:37:32 [emerg] 1#1: unknown directive "SSLProtocol" in /etc/nginx/nginx.conf:43
+2025/04/29 19:37:45 [emerg] 1#1: unknown directive "SSLProtocol" in /etc/nginx/nginx.conf:43
+2025/04/29 19:38:11 [emerg] 1#1: unknown directive "SSLProtocol" in /etc/nginx/nginx.conf:43
+2025/04/29 19:39:02 [emerg] 1#1: unknown directive "SSLProtocol" in /etc/nginx/nginx.conf:43
+2025/04/29 20:12:55 [emerg] 1#1: the size 10485760 of shared memory zone "SSL" conflicts with already declared size 52428800 in /etc/nginx/nginx.conf:49
+2025/04/29 20:12:55 [emerg] 1#1: the size 10485760 of shared memory zone "SSL" conflicts with already declared size 52428800 in /etc/nginx/nginx.conf:49
+2025/04/29 20:12:56 [emerg] 1#1: the size 10485760 of shared memory zone "SSL" conflicts with already declared size 52428800 in /etc/nginx/nginx.conf:49
+2025/04/29 20:12:57 [emerg] 1#1: the size 10485760 of shared memory zone "SSL" conflicts with already declared size 52428800 in /etc/nginx/nginx.conf:49
+2025/04/29 20:12:58 [emerg] 1#1: the size 10485760 of shared memory zone "SSL" conflicts with already declared size 52428800 in /etc/nginx/nginx.conf:49
+2025/04/29 20:12:59 [emerg] 1#1: the size 10485760 of shared memory zone "SSL" conflicts with already declared size 52428800 in /etc/nginx/nginx.conf:49
+2025/04/29 20:13:03 [emerg] 1#1: the size 10485760 of shared memory zone "SSL" conflicts with already declared size 52428800 in /etc/nginx/nginx.conf:49
+2025/04/29 20:13:09 [emerg] 1#1: the size 10485760 of shared memory zone "SSL" conflicts with already declared size 52428800 in /etc/nginx/nginx.conf:49
+2025/04/29 20:13:22 [emerg] 1#1: the size 10485760 of shared memory zone "SSL" conflicts with already declared size 52428800 in /etc/nginx/nginx.conf:49
+2025/04/29 20:13:48 [emerg] 1#1: the size 10485760 of shared memory zone "SSL" conflicts with already declared size 52428800 in /etc/nginx/nginx.conf:49
+2025/04/29 20:42:31 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:33

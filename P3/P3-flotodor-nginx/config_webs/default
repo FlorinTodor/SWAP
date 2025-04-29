@@ -32,9 +32,19 @@ server {
 
     server_name _;
 
-    ssl_certificate /etc/nginx/ssl/Webs/servidor-web.crt;
+    ssl_certificate /etc/nginx/ssl/Webs/servidor-web-full.crt;
     ssl_certificate_key /etc/nginx/ssl/Webs/servidor-web.key;
     ssl_trusted_certificate /etc/nginx/ssl/CA/ca-raiz.crt;
+
+
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305';
+
+
+    
+
+
 
     location / {
         try_files $uri $uri/ /index.php?$query_string;
