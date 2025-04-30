@@ -92,3 +92,9 @@
 2025/04/29 20:13:22 [emerg] 1#1: the size 10485760 of shared memory zone "SSL" conflicts with already declared size 52428800 in /etc/nginx/nginx.conf:49
 2025/04/29 20:13:48 [emerg] 1#1: the size 10485760 of shared memory zone "SSL" conflicts with already declared size 52428800 in /etc/nginx/nginx.conf:49
 2025/04/29 20:42:31 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:33
+2025/04/30 08:46:30 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:33
+2025/04/30 09:14:25 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:33
+2025/04/30 09:15:26 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:33
+2025/04/30 09:15:54 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:33
+2025/04/30 09:16:04 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:33
+2025/04/30 09:16:07 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:33
