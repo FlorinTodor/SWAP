@@ -1,0 +1,21 @@
+FROM nginx:latest
+
+# ----------------------------------------------
+# Paquetes básicos
+RUN apt-get update && apt-get upgrade -y
+RUN apt install -y net-tools iputils-ping iptables
+# ----------------------------------------------
+
+# Configuración de Nginx: limpiar index.html y nginx.conf
+RUN rm -f /usr/share/nginx/html/index.html
+RUN rm -f /etc/nginx/nginx.conf
+
+# Creamos directorios para SSL (vacíos)
+RUN mkdir -p /etc/nginx/ssl
+
+# ----------------------------------------------
+# Exponemos puertos para HTTP y HTTPS
+EXPOSE 80 443
+
+# Lanzamos Nginx en primer plano
+CMD ["nginx", "-g", "daemon off;"]

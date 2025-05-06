@@ -46,3 +46,20 @@ www-data      23  0.0  0.0 204800 14984 ?        S    Apr29   0:00 /usr/sbin/apa
 www-data      24  0.0  0.0 204800 14428 ?        S    Apr29   0:00 /usr/sbin/apache2 -D FOREGROUND
 www-data      25  0.0  0.0 204800 14428 ?        S    Apr29   0:00 /usr/sbin/apache2 -D FOREGROUND
 ----------------------------
+[+] Monitoreando Apache en web7 - Thu May  1 19:40:46 UTC 2025
+[*] Procesos Apache:
+root           1  8.0  0.0   2800  1928 ?        Ss   19:40   0:00 /bin/sh /usr/sbin/apache2ctl -D FOREGROUND
+root          15  0.0  0.0   5008  2572 ?        R    19:40   0:00 /usr/sbin/apache2 -D FOREGROUND
+[*] Conexiones activas (netstat):
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.0.11:34987        0.0.0.0:*               LISTEN     
+tcp6       0      0 :::9100                 :::*                    LISTEN     
+udp        0      0 127.0.0.11:44403        0.0.0.0:*                          
+[*] Top procesos por uso de memoria:
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           8  0.0  0.0 1239776 12288 ?       Sl   19:40   0:00 /usr/local/bin/node_exporter
+root          15  0.0  0.0  20220  4068 ?        R    19:40   0:00 /usr/sbin/apache2 -D FOREGROUND
+root          20  0.0  0.0   7888  3900 ?        R    19:40   0:00 ps aux --sort=-%mem
+root           7  0.0  0.0   4324  3420 ?        S    19:40   0:00 /bin/bash /usr/local/bin/apache_monitor.sh
+----------------------------
