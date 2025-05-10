@@ -18,6 +18,12 @@ iptables -A INPUT -p tcp --tcp-flags ALL FIN,URG,PSH -j DROP
 iptables -A INPUT -p tcp --tcp-flags ALL SYN,FIN     -j DROP
 iptables -A INPUT -p tcp --tcp-flags ALL SYN,RST     -j DROP
 
+# ---- BLOQUEAR IP SPOOFING (IPs privadas falsas) ----
+iptables -A INPUT -s 10.0.0.0/8     -j DROP
+iptables -A INPUT -s 172.16.0.0/12  -j DROP
+iptables -A INPUT -s 192.168.0.0/16 -j DROP
+iptables -A INPUT -s 127.0.0.0/8 ! -i lo -j DROP
+iptables -A INPUT -s 169.254.0.0/16 -j DROP
 ### CADENA DE RATE LIMITING ###
 iptables -F RATE_HTTP 2>/dev/null || iptables -N RATE_HTTP
 
@@ -45,13 +51,31 @@ iptables -I INPUT -p tcp --dport 80  -j RATE_HTTP
 iptables -I INPUT -p tcp --dport 443 -j RATE_HTTP
 
 ### FILTROS SQLi y XSS ###
-for STRING in "SELECT " "UNION SELECT" "' OR 1=1" "<script>" "onerror="; do
+for STRING in "SELECT " "UNION SELECT" "' OR 1=1"; do
   iptables -A INPUT -p tcp --dport 80 -m string --algo bm --string "$STRING" -j DROP
+  iptables -A INPUT -p tcp --dport 443 -m string --algo bm --string "$STRING" -j DROP
+done
+
+for PORT in 80 443; do
+  for STRING in "<script>" "%3Cscript%3E" "onerror=" "alert(" "%3Cimg%20src=x%20onerror="; do
+    iptables -A INPUT -p tcp --dport $PORT -m string --algo bm --string "$STRING" -j DROP
+  done
 done
 
 ### LÍMITE BÁSICO DE SYN FLOOD ###
 iptables -A INPUT -p tcp --syn -m limit --limit 1/s --limit-burst 4 -j ACCEPT
 iptables -A INPUT -p tcp --syn -j DROP
+
+### MITIGACIÓN DE CONEXIONES EXCESIVAS POR IP ###
+iptables -A INPUT -p tcp --dport 80 -m conntrack --ctstate NEW -m connlimit --connlimit-above 20 --connlimit-mask 32 -j DROP
+iptables -A INPUT -p tcp --dport 443 -m conntrack --ctstate NEW -m connlimit --connlimit-above 20 --connlimit-mask 32 -j DROP
+
+### LIMITAR FRECUENCIA DE NUEVAS CONEXIONES POR IP (hashlimit) ###
+iptables -A INPUT -p tcp --dport 80 -m conntrack --ctstate NEW -m hashlimit --hashlimit 3/sec --hashlimit-burst 5 --hashlimit-mode srcip --hashlimit-name http_limit -j ACCEPT
+iptables -A INPUT -p tcp --dport 80 -m conntrack --ctstate NEW -j DROP
+
+iptables -A INPUT -p tcp --dport 443 -m conntrack --ctstate NEW -m hashlimit --hashlimit 3/sec --hashlimit-burst 5 --hashlimit-mode srcip --hashlimit-name https_limit -j ACCEPT
+iptables -A INPUT -p tcp --dport 443 -m conntrack --ctstate NEW -j DROP
 
 ### PUERTOS PERMITIDOS ###
 for PORT in 80 443 9100 2049 111; do
@@ -67,6 +91,5 @@ iptables -A INPUT -p tcp --dport 113:442    -j DROP
 iptables -A INPUT -p tcp --dport 444:1023   -j DROP
 iptables -A INPUT -p tcp --dport 1025:65535 -j DROP
 
-echo "[✓] IPTABLES cargado con limitación 3 req/s y protección activa."
-
-
+echo "[✓] IPTABLES cargado con refuerzo hashlimit y connlimit por IP."
+a

