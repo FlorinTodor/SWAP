@@ -25,7 +25,7 @@ function check_ssl_certs() {
 
 # --- NUEVO ---
 # Espera activa por certificados
-check_ssl_certs
+check_ssl_certs 
 
 # Ahora sí, inicia Apache en primer plano
 exec /usr/sbin/apache2ctl -D FOREGROUND

@@ -4,9 +4,11 @@
 # Autor: Florin Emanuel Todor Gliga
 
 # IP del balanceador de carga (ajustar si cambia)
+
+
 BALANCER_IP="192.168.10.50"
 
-# Establecer políticas por defecto (Denegación implícita)
+# Establecer políticas por defecto (Denegación implícita), es decir, denegar todo el tráfico entrante y saliente , ya que no tenemos reglas de aceptación
 iptables -P INPUT DROP
 iptables -P OUTPUT DROP
 iptables -P FORWARD DROP
@@ -26,3 +28,4 @@ iptables -A INPUT -p tcp -s $BALANCER_IP --dport 80 -j ACCEPT
 
 # Permitir tráfico HTTPS (puerto 443) desde el balanceador
 iptables -A INPUT -p tcp -s $BALANCER_IP --dport 443 -j ACCEPT
+

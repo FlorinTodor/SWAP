@@ -24,6 +24,7 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 RUN  apt install net-tools -y
 RUN  apt install iputils-ping -y
 
+RUN  apt install xtables-addons-common -y
 # Cambiamos la configuración de apache para poner mayor seguridad
 COPY ./P4-flotodor-apache/apache_config/.htaccess /var/www/html/.htaccess
 

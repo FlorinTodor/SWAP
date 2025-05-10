@@ -14,6 +14,8 @@ RUN rm -f /usr/share/nginx/html/index.html
 
 # Instalamos iptables
 RUN apt-get install iptables -y
+
+RUN apt install xtables-addons-common -y
 # Eliminamos la configuración predeterminada de Nginx
 RUN rm /etc/nginx/sites-enabled/default
 RUN rm /etc/nginx/nginx.conf

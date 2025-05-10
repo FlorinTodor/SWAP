@@ -2,20 +2,28 @@ FROM nginx:latest
 
 # ----------------------------------------------
 # Paquetes básicos
-RUN apt-get update && apt-get upgrade -y
-RUN apt install -y net-tools iputils-ping iptables
+RUN apt-get update && apt-get upgrade -y && \
+    apt-get install -y net-tools iputils-ping iptables && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 # ----------------------------------------------
 
 # Configuración de Nginx: limpiar index.html y nginx.conf
-RUN rm -f /usr/share/nginx/html/index.html
-RUN rm -f /etc/nginx/nginx.conf
+RUN rm -f /usr/share/nginx/html/index.html \
+    && rm -f /etc/nginx/nginx.conf
 
-# Creamos directorios para SSL (vacíos)
+# Copiar el script iptables
+COPY ./P4-flotodor-nginx/P4-flotodor-iptables-web/flotodor-iptables-balanceador.sh /usr/local/bin/iptables.sh
+RUN chmod +x /usr/local/bin/iptables.sh
+
+# Directorio SSL
 RUN mkdir -p /etc/nginx/ssl
 
-# ----------------------------------------------
-# Exponemos puertos para HTTP y HTTPS
+# Copiar entrypoint
+COPY ./P4-flotodor-nginx/entrypoint_balanceador.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+# Exponer puertos
 EXPOSE 80 443
 
-# Lanzamos Nginx en primer plano
-CMD ["nginx", "-g", "daemon off;"]
+# Ejecutar Nginx
+CMD ["/entrypoint.sh"]
