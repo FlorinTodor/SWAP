@@ -1,0 +1,11 @@
+FROM envoyproxy/envoy:v1.29-latest
+USER root
+COPY ./P4-flotodor-envoy/envoy.yaml /etc/envoy/envoy.yaml
+RUN touch /tmp/envoy_admin.log && chmod 666 /tmp/envoy_admin.log
+
+RUN touch /tmp/admin_access.log && chmod 666 /tmp/admin_access.log
+
+EXPOSE 80
+EXPOSE 9901
+
+CMD ["envoy", "-c", "/etc/envoy/envoy.yaml", "--service-cluster", "flotodor"]
