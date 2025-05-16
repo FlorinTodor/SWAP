@@ -1,0 +1,191 @@
+
+
+[>> Acceso normal <<]
+[✓] Acceso exitoso a http://localhost
+[⏱] Tiempo de ejecución: 1461 ms
+
+
+[>> Ataque DoS curl paralelo (100) <<]
+[⏱] Tiempo de ejecución: 177426 ms
+[✔] Completadas: 99 | [✖] Fallidas: 1 | [📊] Éxito: 99%
+
+
+[>> Apache Bench: 1000 peticiones / 100 concurrencia <<]
+This is ApacheBench, Version 2.3 <$Revision: 1903618 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 100 requests
+apr_socket_recv: Connection reset by peer (104)
+Total of 112 requests completed
+[⏱] Tiempo de ejecución: 135554 ms
+
+
+[>> Simulación Slowloris <<]
+Sat May 10 15:21:52 2025:[H[2JSat May 10 15:21:52 2025:
+	[1;36mslowhttptest version 1.9.0
+ - https://github.com/shekyan/slowhttptest -
+[0;34mtest type:[1;34m                        SLOW HEADERS
+[0;34mnumber of connections:[1;34m            200
+[0;34mURL:[1;34m                              http://localhost/
+[0;34mverb:[1;34m                             GET
+[0;34mcookie:[1;34m                           
+[0;34mContent-Length header value:[1;34m      4096
+[0;34mfollow up data max size:[1;34m          52
+[0;34minterval between follow up data:[1;34m  10 seconds
+[0;34mconnections per seconds:[1;34m          200
+[0;34mprobe connection timeout:[1;34m         3 seconds
+[0;34mtest duration:[1;34m                    10 seconds
+[0;34musing proxy:[1;34m                      no proxy 
+
+[0mSat May 10 15:21:52 2025:[1;32m
+slow HTTP test status on [0;32m0[1;32mth second:
+
+[1;32minitializing:[1;32m        0
+[1;32mpending:     [1;32m        1
+[1;32mconnected:   [1;32m        0
+[1;32merror:       [1;32m        0
+[1;32mclosed:      [1;32m        0
+[1;32mservice available:[1;32m   [1;32mYES[0m
+[0mSat May 10 15:21:57 2025:[H[2JSat May 10 15:21:57 2025:
+	[1;36mslowhttptest version 1.9.0
+ - https://github.com/shekyan/slowhttptest -
+[0;34mtest type:[1;34m                        SLOW HEADERS
+[0;34mnumber of connections:[1;34m            200
+[0;34mURL:[1;34m                              http://localhost/
+[0;34mverb:[1;34m                             GET
+[0;34mcookie:[1;34m                           
+[0;34mContent-Length header value:[1;34m      4096
+[0;34mfollow up data max size:[1;34m          52
+[0;34minterval between follow up data:[1;34m  10 seconds
+[0;34mconnections per seconds:[1;34m          200
+[0;34mprobe connection timeout:[1;34m         3 seconds
+[0;34mtest duration:[1;34m                    10 seconds
+[0;34musing proxy:[1;34m                      no proxy 
+
+[0mSat May 10 15:21:57 2025:[1;32m
+slow HTTP test status on [0;32m5[1;32mth second:
+
+[1;32minitializing:[1;32m        0
+[1;32mpending:     [1;32m        0
+[1;32mconnected:   [1;32m        200
+[1;32merror:       [1;32m        0
+[1;32mclosed:      [1;32m        0
+[1;32mservice available:[1;32m   [1;31mNO[0m
+[0mSat May 10 15:22:02 2025:[H[2JSat May 10 15:22:02 2025:
+	[1;36mslowhttptest version 1.9.0
+ - https://github.com/shekyan/slowhttptest -
+[0;34mtest type:[1;34m                        SLOW HEADERS
+[0;34mnumber of connections:[1;34m            200
+[0;34mURL:[1;34m                              http://localhost/
+[0;34mverb:[1;34m                             GET
+[0;34mcookie:[1;34m                           
+[0;34mContent-Length header value:[1;34m      4096
+[0;34mfollow up data max size:[1;34m          52
+[0;34minterval between follow up data:[1;34m  10 seconds
+[0;34mconnections per seconds:[1;34m          200
+[0;34mprobe connection timeout:[1;34m         3 seconds
+[0;34mtest duration:[1;34m                    10 seconds
+[0;34musing proxy:[1;34m                      no proxy 
+
+[0mSat May 10 15:22:02 2025:[1;32m
+slow HTTP test status on [0;32m10[1;32mth second:
+
+[1;32minitializing:[1;32m        0
+[1;32mpending:     [1;32m        0
+[1;32mconnected:   [1;32m        200
+[1;32merror:       [1;32m        0
+[1;32mclosed:      [1;32m        0
+[1;32mservice available:[1;32m   [1;31mNO[0m
+[0mSat May 10 15:22:03 2025:[0;36m
+Test ended on 11th second
+Exit status:[1;36m Hit test time limit
+[0m
+[⏱] Tiempo de ejecución: 11061 ms
+
+
+[>> Ataque SQL Injection <<]
+[HTTP_CODE:000]
+
+
+[>> Ataque XSS <<]
+[HTTP_CODE:200]
+
+
+[>> Escaneo SYN <<]
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-05-10 15:22 CEST
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.0000070s latency).
+Not shown: 65516 closed tcp ports (reset)
+PORT      STATE SERVICE
+80/tcp    open  http
+111/tcp   open  rpcbind
+443/tcp   open  https
+631/tcp   open  ipp
+2049/tcp  open  nfs
+8081/tcp  open  blackice-icecap
+8082/tcp  open  blackice-alerts
+8083/tcp  open  us-srv
+8084/tcp  open  websnp
+8085/tcp  open  unknown
+8086/tcp  open  d-s-n
+8087/tcp  open  simplifymedia
+8088/tcp  open  radan-http
+29754/tcp open  unknown
+41815/tcp open  unknown
+43095/tcp open  unknown
+44039/tcp open  unknown
+54837/tcp open  unknown
+59617/tcp open  unknown
+
+Nmap done: 1 IP address (1 host up) scanned in 0.90 seconds
+[⏱] Tiempo de ejecución: 923 ms
+
+
+[>> Escaneo NULL <<]
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-05-10 15:22 CEST
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.0000080s latency).
+Not shown: 987 closed tcp ports (reset)
+PORT     STATE         SERVICE
+80/tcp   open|filtered http
+111/tcp  open|filtered rpcbind
+443/tcp  open|filtered https
+631/tcp  open|filtered ipp
+2049/tcp open|filtered nfs
+8081/tcp open|filtered blackice-icecap
+8082/tcp open|filtered blackice-alerts
+8083/tcp open|filtered us-srv
+8084/tcp open|filtered websnp
+8085/tcp open|filtered unknown
+8086/tcp open|filtered d-s-n
+8087/tcp open|filtered simplifymedia
+8088/tcp open|filtered radan-http
+
+Nmap done: 1 IP address (1 host up) scanned in 1.26 seconds
+[⏱] Tiempo de ejecución: 1282 ms
+
+
+[>> Escaneo XMAS <<]
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-05-10 15:22 CEST
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.0000080s latency).
+Not shown: 987 closed tcp ports (reset)
+PORT     STATE         SERVICE
+80/tcp   open|filtered http
+111/tcp  open|filtered rpcbind
+443/tcp  open|filtered https
+631/tcp  open|filtered ipp
+2049/tcp open|filtered nfs
+8081/tcp open|filtered blackice-icecap
+8082/tcp open|filtered blackice-alerts
+8083/tcp open|filtered us-srv
+8084/tcp open|filtered websnp
+8085/tcp open|filtered unknown
+8086/tcp open|filtered d-s-n
+8087/tcp open|filtered simplifymedia
+8088/tcp open|filtered radan-http
+
+Nmap done: 1 IP address (1 host up) scanned in 1.27 seconds
+[⏱] Tiempo de ejecución: 1296 ms

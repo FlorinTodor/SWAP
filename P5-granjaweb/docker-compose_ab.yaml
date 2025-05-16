@@ -1,0 +1,25 @@
+# P5-ab/docker-compose.yml
+
+services:
+  apache-benchmark-P5:
+    build:
+      context: .          # apunta al directorio P5-ab
+      dockerfile: DockerfileAB
+    image: flotodor-ab-image:p5
+    container_name: apache_benchmark-P5
+
+    # Comando por defecto:
+    # -k  → ignora certificados inválidos (útil si el balanceador usa un cert. autofirmado)
+    # -n  → nº total de peticiones
+    # -c  → concurrencia
+    # Cambia estas cifras a tu gusto o sobreescríbelas con `docker compose run`
+    command: >
+      -k -n 10000 -c 100 https://192.168.10.50/
+
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.60
+
+networks:
+  red_web:
+    external: true        # ya existe; la creó tu stack principal

@@ -1,0 +1,13 @@
+# P5-ab/DockerfileAB
+# Imagen mínima de Debian + Apache Benchmark (ab)
+FROM debian:bookworm-slim
+
+
+
+# Instalamos ab y certificados raíz para poder probar HTTPS
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends apache2-utils ca-certificates curl \
+ && rm -rf /var/lib/apt/lists/*
+
+# ab es la entrypoint por defecto; el CMD se puede sobreescribir en docker-compose
+ENTRYPOINT ["ab"]
