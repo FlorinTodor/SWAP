@@ -29,7 +29,7 @@ log() {
 
 # Método para actualizar la configuración de HAProxy con las instancias activas 
 actualizar_haproxy_cfg() {
-  local cfg="./P3-flotodor-haproxy/config_balanceador/haproxy.cfg"
+  local cfg="./P5-flotodor-haproxy/config_balanceador/haproxy.cfg"
   cat > "$cfg" <<EOF
 global
     stats socket /var/lib/haproxy/stats
@@ -116,11 +116,11 @@ crear_web() {
   if [ "$tipo" == "apache" ]; then
     volume1="-v $(pwd)/web_flotodor:/var/www/html"
     volume2="-v $(pwd)/logs_apache:/var/log/apache2"
-    imagen="flotodor-apache-image:p3"
+    imagen="flotodor-apache-image:p5"
   else
     volume1="-v $(pwd)/web_flotodor:/usr/share/nginx/html:ro"
     volume2="-v $(pwd)/logs_nginx:/var/log/nginx"
-    imagen="flotodor-nginx_web-image:p3"
+    imagen="flotodor-nginx_web-image:p5"
   fi
 
   docker network disconnect red_web "web$id" 2>/dev/null

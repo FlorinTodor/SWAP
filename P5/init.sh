@@ -106,28 +106,28 @@ function stop_and_remove() {
 function build_image(){
   case $1 in
     apache)
-      docker rmi flotodor-apache-image:p4 -f
-      docker build --no-cache -t flotodor-apache-image:p4 -f ./P4-flotodor-apache/DockerfileApache_florin .
+      docker rmi flotodor-apache-image:p5 -f
+      docker build --no-cache -t flotodor-apache-image:p5 -f ./P5-flotodor-apache/DockerfileApache_florin .
       ;;
     nginx)
-      docker rmi flotodor-nginx_web-image:p4 -f
-      docker build --no-cache -t flotodor-nginx_web-image:p4 -f ./P4-flotodor-nginx/DockerfileNginx_web .
+      docker rmi flotodor-nginx_web-image:p5 -f
+      docker build --no-cache -t flotodor-nginx_web-image:p5 -f ./P5-flotodor-nginx/DockerfileNginx_web .
       ;;
     nginx_balanceador)
-      docker rmi flotodor-nginx_balanceador-image:p4 -f
-      docker build --no-cache  -t flotodor-nginx_balanceador-image:p4 -f ./P4-flotodor-nginx/DockerfileNginx_balanceador .
+      docker rmi flotodor-nginx_balanceador-image:p5 -f
+      docker build --no-cache  -t flotodor-nginx_balanceador-image:p5 -f ./P5-flotodor-nginx/DockerfileNginx_balanceador .
       ;;
     haproxy_balanceador)
-      docker rmi flotodor-haproxy_balanceador-image:p4 -f
-      docker build --no-cache -t flotodor-haproxy_balanceador-image:p4 -f ./P4-flotodor-haproxy/DockerfileHAproxy_balanceador .
+      docker rmi flotodor-haproxy_balanceador-image:p5 -f
+      docker build --no-cache -t flotodor-haproxy_balanceador-image:p5 -f ./P5-flotodor-haproxy/DockerfileHAproxy_balanceador .
       ;;
     traefik_balanceador)
-      docker rmi flotodor-traefik_balanceador-image:p4 -f
-      docker build --no-cache -t flotodor-traefik_balanceador-image:p4 -f ./P4-flotodor-traefik/DockerfileTraefik_balanceador .
+      docker rmi flotodor-traefik_balanceador-image:p5 -f
+      docker build --no-cache -t flotodor-traefik_balanceador-image:p5 -f ./P5-flotodor-traefik/DockerfileTraefik_balanceador .
       ;;
     envoy_balanceador)
-      docker rmi flotodor-envoy_balanceador-image:p4 -f
-      docker build --no-cache -t flotodor-envoy_balanceador-image:p4 -f ./P4-flotodor-envoy/DockerfileEnvoy_balanceador .
+      docker rmi flotodor-envoy_balanceador-image:p5 -f
+      docker build --no-cache -t flotodor-envoy_balanceador-image:p5 -f ./P5-flotodor-envoy/DockerfileEnvoy_balanceador .
       ;;
     all)
       build_image apache
@@ -163,17 +163,17 @@ function ensure_networks() {
 # Función para establecer la estrategia de balanceo de carga en HAProxy
 # Se copia el archivo de configuración correspondiente a la estrategia seleccionada
 # y se muestra un mensaje indicando la estrategia utilizada
-# Se espera que el archivo de configuración esté en la ruta ./P4-flotodor-haproxy/config_balanceador/
+# Se espera que el archivo de configuración esté en la ruta ./P5-flotodor-haproxy/config_balanceador/
 #Las estrategias disponibles son: menor número de conexiones (lc) y round-robin (rb) y por defecto se usa round-robin
 function set_haproxy_strategy() {
   local strategy=$1
   case "$strategy" in
     lc)
-      cp ./P4-flotodor-haproxy/config_balanceador/haproxy_lc.cfg ./P4-flotodor-haproxy/config_balanceador/haproxy.cfg
+      cp ./P5-flotodor-haproxy/config_balanceador/haproxy_lc.cfg ./P5-flotodor-haproxy/config_balanceador/haproxy.cfg
       echo -e "${blueColour}[i] Estrategia de balanceo: menor número de conexiones${endColour}"
       ;;
     rb|"")
-      cp ./P4-flotodor-haproxy/config_balanceador/haproxy_rb.cfg ./P4-flotodor-haproxy/config_balanceador/haproxy.cfg
+      cp ./P5-flotodor-haproxy/config_balanceador/haproxy_rb.cfg ./P5-flotodor-haproxy/config_balanceador/haproxy.cfg
       echo -e "${blueColour}[i] Estrategia de balanceo: round-robin (por defecto)${endColour}"
       ;;
     *)
@@ -186,17 +186,17 @@ function set_haproxy_strategy() {
 # Función para establecer la estrategia de balanceo de carga en Nginx
 # Se copia el archivo de configuración correspondiente a la estrategia seleccionada
 # y se muestra un mensaje indicando la estrategia utilizada
-# Se espera que el archivo de configuración esté en la ruta ./P4-flotodor-nginx/config_balanceador/
+# Se espera que el archivo de configuración esté en la ruta ./P5-flotodor-nginx/config_balanceador/
 #Las estrategias disponibles son: ponderación (pd) y round-robin (rb) y por defecto se usa round-robin
 function set_nginx_strategy() {
   local strategy=$1
   case "$strategy" in
     pd)
-      cp ./P4-flotodor-nginx/config_balanceador/nginx_pd.conf ./P4-flotodor-nginx/config_balanceador/nginx.conf
+      cp ./P5-flotodor-nginx/config_balanceador/nginx_pd.conf ./P5-flotodor-nginx/config_balanceador/nginx.conf
       echo -e "${blueColour}[i] Estrategia de balanceo: ponderación con pesos${endColour}"
       ;;
     rb|"")
-      cp ./P4-flotodor-nginx/config_balanceador/nginx_rb.conf ./P4-flotodor-nginx/config_balanceador/nginx.conf
+      cp ./P5-flotodor-nginx/config_balanceador/nginx_rb.conf ./P5-flotodor-nginx/config_balanceador/nginx.conf
       echo -e "${blueColour}[i] Estrategia de balanceo: round-robin (por defecto)${endColour}"
       ;;
     *)
