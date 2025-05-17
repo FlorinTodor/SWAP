@@ -22,4 +22,4 @@ services:
 
 networks:
   red_web:
-    external: true        # ya existe; la creó tu stack principal
+    external: true     

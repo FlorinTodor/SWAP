@@ -70,7 +70,7 @@ function stop_and_remove() {
       containers=$(docker ps -a --format '{{.Names}}' | grep '^web[0-9]*$' | xargs -n1 docker inspect --format '{{.Name}} {{.Config.Image}}' 2>/dev/null | grep 'ab' | cut -d' ' -f1 | sed 's/^\/\(.*\)/\1/')
       ;;
     all)
-      containers=$(docker ps -a --format '{{.Names}}' | grep -E '^(web[0-9]+|grafana|prometheus|node-exporter|.*_balanceador |ab)$')
+      containers=$(docker ps -a --format '{{.Names}}' | grep -E '^(web[0-9]+|grafana|prometheus|node-exporter|.*_balanceador|ab)$')
       ;;
     *)
       echo -e "${redColour}[!] Selecciona: apache, nginx, nginx_balanceador, haproxy_balanceador, traefik_balanceador, envoy_balanceador, escalado o all${endColour}"

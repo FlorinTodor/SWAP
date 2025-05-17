@@ -302,3 +302,31 @@
 [Fri May 16 18:33:15.187531 2025] [core:warn] [pid 16] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
 [Fri May 16 18:33:15.190371 2025] [mpm_prefork:notice] [pid 16] AH00163: Apache/2.4.58 (Ubuntu) OpenSSL/3.0.13 configured -- resuming normal operations
 [Fri May 16 18:33:15.190384 2025] [core:notice] [pid 16] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat May 17 00:18:55.663550 2025] [mpm_prefork:notice] [pid 17] AH00163: Apache/2.4.58 (Ubuntu) OpenSSL/3.0.13 configured -- resuming normal operations
+[Sat May 17 00:18:55.663970 2025] [core:notice] [pid 17] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat May 17 00:18:55.665428 2025] [mpm_prefork:notice] [pid 16] AH00163: Apache/2.4.58 (Ubuntu) OpenSSL/3.0.13 configured -- resuming normal operations
+[Sat May 17 00:18:55.665505 2025] [core:notice] [pid 16] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat May 17 00:18:55.787826 2025] [mpm_prefork:notice] [pid 18] AH00163: Apache/2.4.58 (Ubuntu) OpenSSL/3.0.13 configured -- resuming normal operations
+[Sat May 17 00:18:55.787888 2025] [core:notice] [pid 18] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat May 17 00:18:56.167371 2025] [mpm_prefork:notice] [pid 17] AH00163: Apache/2.4.58 (Ubuntu) OpenSSL/3.0.13 configured -- resuming normal operations
+[Sat May 17 00:18:56.167435 2025] [core:notice] [pid 17] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat May 17 08:22:04.621302 2025] [core:warn] [pid 17] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sat May 17 08:22:04.624415 2025] [mpm_prefork:notice] [pid 17] AH00163: Apache/2.4.58 (Ubuntu) OpenSSL/3.0.13 configured -- resuming normal operations
+[Sat May 17 08:22:04.624430 2025] [core:notice] [pid 17] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat May 17 08:22:05.717704 2025] [core:warn] [pid 17] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sat May 17 08:22:05.720857 2025] [mpm_prefork:notice] [pid 17] AH00163: Apache/2.4.58 (Ubuntu) OpenSSL/3.0.13 configured -- resuming normal operations
+[Sat May 17 08:22:05.720872 2025] [core:notice] [pid 17] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat May 17 08:22:05.831091 2025] [core:warn] [pid 19] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sat May 17 08:22:05.834034 2025] [mpm_prefork:notice] [pid 19] AH00163: Apache/2.4.58 (Ubuntu) OpenSSL/3.0.13 configured -- resuming normal operations
+[Sat May 17 08:22:05.834049 2025] [core:notice] [pid 19] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat May 17 08:22:07.923472 2025] [core:warn] [pid 17] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sat May 17 08:22:07.926396 2025] [mpm_prefork:notice] [pid 17] AH00163: Apache/2.4.58 (Ubuntu) OpenSSL/3.0.13 configured -- resuming normal operations
+[Sat May 17 08:22:07.926412 2025] [core:notice] [pid 17] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat May 17 09:20:30.384300 2025] [mpm_prefork:notice] [pid 16] AH00163: Apache/2.4.58 (Ubuntu) OpenSSL/3.0.13 configured -- resuming normal operations
+[Sat May 17 09:20:30.384543 2025] [core:notice] [pid 16] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat May 17 09:20:30.500089 2025] [mpm_prefork:notice] [pid 17] AH00163: Apache/2.4.58 (Ubuntu) OpenSSL/3.0.13 configured -- resuming normal operations
+[Sat May 17 09:20:30.500119 2025] [core:notice] [pid 17] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat May 17 09:20:30.571013 2025] [mpm_prefork:notice] [pid 17] AH00163: Apache/2.4.58 (Ubuntu) OpenSSL/3.0.13 configured -- resuming normal operations
+[Sat May 17 09:20:30.571043 2025] [core:notice] [pid 17] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
+[Sat May 17 09:20:30.990474 2025] [mpm_prefork:notice] [pid 17] AH00163: Apache/2.4.58 (Ubuntu) OpenSSL/3.0.13 configured -- resuming normal operations
+[Sat May 17 09:20:30.990511 2025] [core:notice] [pid 17] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'
