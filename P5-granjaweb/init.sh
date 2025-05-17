@@ -20,9 +20,9 @@ function ctrl_c(){
 function helpPanel(){
   echo -e "\n${yellowColour}[+]${endColour}${grayColour} Uso:${endColour}\n"
   echo -e "\t${purpleColour}-c${endColour}${grayColour} Limpiar archivos dentro de logs_apache y logs_nginx${endColour}"
-  echo -e "\t${purpleColour}-s${endColour}${grayColour} Detener y eliminar contenedores (apache/nginx/nginx_balanceador/haproxy_balanceador/all)${endColour}"
+  echo -e "\t${purpleColour}-s${endColour}${grayColour} Detener y eliminar contenedores (apache/nginx/nginx_balanceador/haproxy_balanceador/traefik_balanceador/envoy_balanceador/escalado/ab/all$l)${endColour}"
   echo -e "\t${purpleColour}-b${endColour}${grayColour} Crear imagen docker (apache/nginx/nginx_balanceador/haproxy_balanceador/ab/all)${endColour}"
-  echo -e "\t${purpleColour}-u${endColour}${grayColour} Ejecutar docker compose up para el balanceador (nginx/haproxy/traefik/envoy/escalado/ab)${endColour}"
+  echo -e "\t${purpleColour}-u${endColour}${grayColour} Ejecutar docker compose up para el balanceador (nginx/haproxy/traefik/envoy/escalado/ab/locust)${endColour}"
   echo -e "\t\t${grayColour}Puedes indicar una estrategia de balanceo para los siguientes balanceadores:${endColour}"
   echo -e "\t\t${turquoiseColour}nginx:${endColour}"
   echo -e "\t\t   ${greenColour}pd${endColour}${grayColour} = ponderación con pesos${endColour}"
@@ -67,13 +67,16 @@ function stop_and_remove() {
       containers="grafana prometheus node-exporter"
       ;;
     ab)
-      containers=$(docker ps -a --format '{{.Names}}' | grep '^web[0-9]*$' | xargs -n1 docker inspect --format '{{.Name}} {{.Config.Image}}' 2>/dev/null | grep 'ab' | cut -d' ' -f1 | sed 's/^\/\(.*\)/\1/')
+      containers="apache_benchmark-P5"
+      ;;
+    locust)
+     containers=$(docker ps -a --format '{{.Names}}' | grep -E '(master|worker)-flotodor')
       ;;
     all)
-      containers=$(docker ps -a --format '{{.Names}}' | grep -E '^(web[0-9]+|grafana|prometheus|node-exporter|.*_balanceador|ab)$')
+      containers=$(docker ps -a --format '{{.Names}}' | grep -E '^(web[0-9]+|grafana|prometheus|node-exporter|.*_balanceador|apache_benchmark-P5|locust)$')
       ;;
     *)
-      echo -e "${redColour}[!] Selecciona: apache, nginx, nginx_balanceador, haproxy_balanceador, traefik_balanceador, envoy_balanceador, escalado o all${endColour}"
+      echo -e "${redColour}[!] Selecciona: apache, nginx, nginx_balanceador, haproxy_balanceador, traefik_balanceador, envoy_balanceador, escalado, ab o all${endColour}"
       return
       ;;
   esac
@@ -286,6 +289,10 @@ function start_balanceador() {
     ab)
       docker compose -f docker-compose_ab.yaml up -d 
       echo -e "${greenColour}[+] Servicios iniciados con Apache Benchmark.${endColour}"
+      ;;
+    locust)
+      docker compose -f docker-compose_locust.yaml up -d --scale worker-flotodor=6
+      echo -e "${greenColour}[+] Clúster Locust (1 master, 6 workers) en marcha.${endColour}"
       ;;
     *)
       echo -e "${redColour}[!] Especifica el tipo de balanceador: nginx, haproxy, traefik, envoy, ab o escalado ${endColour}"

@@ -1,0 +1,31 @@
+services:
+  master-flotodor:
+    image: locustio/locust:latest
+    hostname: master-flotodor
+    command: [
+      "-f", "/mnt/locust/locustfile.py",
+      "--master",
+      "-H", "https://192.168.10.50:443/"
+    ]
+    ports: [ "8089:8089" ]
+    volumes:
+      - ./P5-locust/locustfile.py:/mnt/locust/locustfile.py:ro
+    networks:
+      red_web:
+        aliases: [ master-flotodor ]
+
+  worker-flotodor:
+    image: locustio/locust:latest
+    command: [
+      "-f", "/mnt/locust/locustfile.py",
+      "--worker",
+      "--master-host", "master-flotodor"
+    ]
+    depends_on: [ master-flotodor ]
+    volumes:
+      - ./P5-locust/locustfile.py:/mnt/locust/locustfile.py:ro
+    networks: [ red_web ]
+
+networks:
+  red_web:
+    external: true
