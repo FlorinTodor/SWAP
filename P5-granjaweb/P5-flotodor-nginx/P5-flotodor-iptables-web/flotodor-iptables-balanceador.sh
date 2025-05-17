@@ -18,9 +18,7 @@ iptables -A INPUT -p tcp --tcp-flags ALL FIN,URG,PSH -j DROP
 iptables -A INPUT -p tcp --tcp-flags ALL SYN,FIN     -j DROP
 iptables -A INPUT -p tcp --tcp-flags ALL SYN,RST     -j DROP
 
-  # ---- BLOQUEAR IP SPOOFING (IPs privadas falsas) ----
-  iptables -A INPUT -s 10.0.0.0/8     -j DROP
-  iptables -A INPUT -s 169.254.0.0/16 -j DROP
+
 ### CADENA DE RATE LIMITING ###
 iptables -F RATE_HTTP 2>/dev/null || iptables -N RATE_HTTP
 
@@ -89,3 +87,4 @@ iptables -A INPUT -p tcp --dport 444:1023   -j DROP
 iptables -A INPUT -p tcp --dport 1025:65535 -j DROP
 
 echo "[✓] IPTABLES cargado con refuerzo hashlimit y connlimit por IP."
+a
