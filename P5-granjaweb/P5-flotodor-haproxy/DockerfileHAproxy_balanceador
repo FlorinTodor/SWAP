@@ -9,10 +9,12 @@ RUN apt-get install -y net-tools iputils-ping iptables
 
 # Copiamos la configuración
 COPY ./P5-flotodor-haproxy/config_balanceador/haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
+COPY ./P5-flotodor-haproxy/ssl/servidor.pem /etc/ssl/haproxy/servidor.pem
 
 # Exponemos los puertos necesarios
 EXPOSE 80
 EXPOSE 9000
+EXPOSE 443
 
 # Ejecutamos HAProxy en primer plano
 CMD ["haproxy", "-f", "/usr/local/etc/haproxy/haproxy.cfg", "-db"]

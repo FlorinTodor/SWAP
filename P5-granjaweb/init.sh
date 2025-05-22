@@ -72,9 +72,11 @@ function stop_and_remove() {
     locust)
      containers=$(docker ps -a --format '{{.Names}}' | grep -E '(master|worker)-flotodor')
       ;;
-    all)
-      containers=$(docker ps -a --format '{{.Names}}' | grep -E '^(web[0-9]+|grafana|prometheus|node-exporter|.*_balanceador|apache_benchmark-P5|locust)$')
-      ;;
+   all)
+  containers=$(docker ps -a --format '{{.Names}}' |
+      grep -E '^(web[0-9]+|grafana|prometheus|node-exporter|.*_balanceador|apache_benchmark-P5|.*(master|worker)-flotodor.*)$')
+  ;;
+
     *)
       echo -e "${redColour}[!] Selecciona: apache, nginx, nginx_balanceador, haproxy_balanceador, traefik_balanceador, envoy_balanceador, escalado, ab o all${endColour}"
       return

@@ -1,18 +1,39 @@
-from locust import HttpUser, TaskSet, task, between
+# P5-locust/locustfile.py
+from locust import HttpUser, task, between
 
-class P5_tuusuariougr(TaskSet):
-    """Tareas concretas: peticiones a la página principal (HTTP y HTTPS)."""
+
+# ---- OPCIÓN  A :  solo HTTPS (lo más rápido) ------------------
+class P5UsuariosHTTPS(HttpUser):
+    """
+    Simula usuarios que pasan por el balanceador HTTPS
+    (-H https://192.168.10.50:443   en docker-compose).
+    """
+    wait_time = between(1, 5)
 
     @task
-    def load_index_https(self):
-        # HTTPS (balanceador: 192.168.10.50:443) – ignorar Cert autofirmado
-        self.client.get("/index.php", verify=False)
+    def index(self):
+        #     OJO ➜   URL RELATIVA,  ¡nunca http://… aquí!
+        self.client.get("/index.php", verify=False, name="/index.php")
 
-    @task
-    def load_index_http(self):
-        # HTTP (bal. reenvía 80) – se usa el mismo host base configurado con -H
-        self.client.get("http://192.168.10.50/index.php", name="/index.php")
 
-class P5_usuarios(HttpUser):
-    tasks = [P5_tuusuariougr]
-    wait_time = between(1, 5)          # espera aleatoria 1-5 s
+# ---- OPCIÓN  B :  medir HTTP y HTTPS en paralelo --------------
+# (Descomenta si lo necesitas.  Cada clase aparece como “User type”
+#  en la GUI y puedes asignarles usuarios por separado).
+
+# class P5UsuariosHTTP(HttpUser):
+#     host = "http://192.168.10.50"
+#     wait_time = between(1, 5)
+#
+#     @task
+#     def index(self):
+#         self.client.get("/index.php", name="/index.php (HTTP)")
+#
+#
+# class P5UsuariosHTTPS(HttpUser):
+#     host = "https://192.168.10.50"
+#     wait_time = between(1, 5)
+#
+#     @task
+#     def index(self):
+#         self.client.get("/index.php", verify=False,
+#                        name="/index.php (HTTPS)")

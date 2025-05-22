@@ -73,20 +73,24 @@ EOF
 # Este archivo es utilizado por Prometheus para descubrir las instancias
 # de Node Exporter que están corriendo en los contenedores web.
 update_file_sd_config() {
-  echo "[" > "$FILE_SD_CONFIG"
-  echo "  {" >> "$FILE_SD_CONFIG"
-  echo '    "targets": [' >> "$FILE_SD_CONFIG"
-  for web in $(get_active_webs); do
-    ip=$(docker inspect -f '{{.NetworkSettings.Networks.red_web.IPAddress}}' "$web")
-    echo "      \"$ip:9100\"," >> "$FILE_SD_CONFIG"
-  done
-  sed -i '$ s/,$//' "$FILE_SD_CONFIG"
-  echo "    ]," >> "$FILE_SD_CONFIG"
-  echo '    "labels": { "job": "node_exporter" }' >> "$FILE_SD_CONFIG"
-  echo "  }" >> "$FILE_SD_CONFIG"
-  echo "]" >> "$FILE_SD_CONFIG"
-  echo -e "[i] Archivo file_sd actualizado con targets activos"
+  mapfile -t targets < <(
+    get_active_webs | while read w; do
+      ip=$(docker inspect -f '{{.NetworkSettings.Networks.red_web.IPAddress}}' "$w")
+      printf '%s:9100\n' "$ip"
+    done | sort -u
+  )
+
+  # crea JSON en un tmp
+  tmp=$(mktemp)
+  printf '%s\n' "${targets[@]}" |
+    jq -Rn '[ inputs | { targets:[.], labels:{job:"node_exporter"} } ]' > "$tmp"
+
+  # mueve sobre el definitivo
+  mv "$tmp" "$FILE_SD_CONFIG"
+  echo "[i] file_sd actualizado con ${#targets[@]} targets"
 }
+
+
 
 # Método para obtener los nombres de los contenedores web activos
 # y ordenarlos por su índice numérico

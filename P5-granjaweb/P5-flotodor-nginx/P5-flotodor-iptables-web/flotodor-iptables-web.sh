@@ -29,3 +29,9 @@ iptables -A INPUT -p tcp -s $BALANCER_IP --dport 80 -j ACCEPT
 # Permitir tráfico HTTPS (puerto 443) desde el balanceador
 iptables -A INPUT -p tcp -s $BALANCER_IP --dport 443 -j ACCEPT
 
+# Permitir tráfico para el puerto 9100 desde la subred
+
+PROMETHEUS_IP="192.168.10.100"
+iptables -A INPUT -p tcp -s $PROMETHEUS_IP --dport 9100 -j ACCEPT
+
+iptables -A INPUT -p tcp -s 192.168.10.0/24 --dport 9100 -j ACCEPT
