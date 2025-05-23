@@ -3,3 +3,6 @@ P2/logs_apache/*.log
 P2/logs_nginx/*.log
 P2/logs_apache/*.log
 P3/P3-flotodor-certificados/*
+P5/logs_nignx/*.log
+P5/logs_apache/*.log
+P5/logs_apache/*.log
