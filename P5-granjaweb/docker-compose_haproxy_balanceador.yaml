@@ -192,14 +192,7 @@ services:
       red_servicios:
         ipv4_address: 192.168.20.11
 
-  wordpress2:
-    <<: *wordpress_base
-    container_name: wordpress2
-    networks:
-      red_web:
-        ipv4_address: 192.168.10.61
-      red_servicios:
-        ipv4_address: 192.168.20.12
+ 
 volumes:
   wp_db_data:
   wp_shared: 
