@@ -160,6 +160,34 @@ services:
       - web7
       - web8
 
+  db:
+    image: mariadb:11
+    container_name: cms_db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpw
+      MYSQL_DATABASE: cms
+      MYSQL_USER: cmsuser
+      MYSQL_PASSWORD: cmspw
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      red_servicios:
+        ipv4_address: 192.168.20.10         # solo back-end
+
+  wordpress:
+    image: wordpress:6.5-php8.3-apache
+    container_name: wordpress1
+    environment:
+      WORDPRESS_DB_HOST: 192.168.20.10
+      WORDPRESS_DB_NAME: cms
+      WORDPRESS_DB_USER: cmsuser
+      WORDPRESS_DB_PASSWORD: cmspw
+    volumes:
+      - wp_data:/var/www/html
+    networks:
+      red_web:
+        ipv4_address: 192.168.10.60        # visible por HAProxy
+
 
 networks:
   red_web:

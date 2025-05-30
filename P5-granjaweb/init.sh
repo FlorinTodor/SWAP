@@ -224,18 +224,19 @@ function set_nginx_strategy() {
 # Función para comprobar la disponibilidad de los puertos 8080 a 8089
 # Se utiliza lsof o ss para verificar si los puertos están en uso
 function check_ports_availability() {
-  echo -e "${yellowColour}[i] Comprobando puertos 8080 a 8089...${endColour}"
+  local ports=("$@")            # ahora recibe lista
+  echo -e "${yellowColour}[i] Comprobando puertos ${ports[*]}...${endColour}"
   local busy=false
 
-  for port in {8080..8089}; do
-    local pid=$(lsof -ti :$port 2>/dev/null || ss -ltnp 2>/dev/null | grep ":$port " | awk -F 'pid=' '{print $2}' | cut -d',' -f1)
-    if [ ! -z "$pid" ]; then
-      local pname=$(ps -p $pid -o comm= 2>/dev/null)
-      echo -e "${redColour}[!] El puerto $port está en uso por el proceso $pname (PID $pid).${endColour}"
+  for port in "${ports[@]}"; do
+    local pid=$(lsof -ti :$port 2>/dev/null || ss -ltnp 2>/dev/null \
+                 | grep ":$port " | awk -F 'pid=' '{print $2}' | cut -d',' -f1)
+    if [[ -n "$pid" ]]; then
+      local pname=$(ps -p "$pid" -o comm= 2>/dev/null)
+      echo -e "${redColour}[!] El puerto $port está en uso por $pname (PID $pid).${endColour}"
       busy=true
     fi
   done
-
   $busy && return 1 || return 0
 }
 
@@ -354,6 +355,7 @@ function compose_up() {
   local strategy=$2
 
   ensure_networks # nos aseguramos de que red_web existe
+
 
   if [ "$type" == "nginx" ]; then
     set_nginx_strategy "$strategy" || return
