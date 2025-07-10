@@ -10,3 +10,4 @@ P5-granjaweb/logs_apache/*.log
 *.pdf
 *.zip
 *.rar
+P5-granjaweb/logs_nginx/*.log
