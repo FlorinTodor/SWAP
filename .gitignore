@@ -6,4 +6,7 @@ P3/P3-flotodor-certificados/*
 P5-granjaweb/logs_nignx/*.log
 P5-granjaweb/logs_apache/*.log
 P5-granjaweb/logs_apache/*.log
+*.log
 *.pdf
+*.zip
+*.rar
